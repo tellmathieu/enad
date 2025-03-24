@@ -1,3 +1,0 @@
-AttributeError in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 56:
-module 'os' has no attribute 'main'
-  File "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk", line 56, in <module>

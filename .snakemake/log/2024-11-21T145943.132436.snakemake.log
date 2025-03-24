@@ -1,4 +1,0 @@
-Building DAG of jobs...
-WildcardError in rule plotStructuralRearrangementCombined in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased.smk, line 526:
-Wildcards in input files cannot be determined from output files:
-'phases'

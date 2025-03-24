@@ -1,7 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule sameChrNamesPrimary in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased.smk, line 341:
-Missing input files for rule sameChrNamesPrimary:
-    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr.fa
-    wildcards: sample=horse_05_608
-    affected files:
-        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.rename.scaffold.fasta

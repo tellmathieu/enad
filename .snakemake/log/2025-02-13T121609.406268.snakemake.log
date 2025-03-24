@@ -1,8 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule all in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased_new.smk, line 52:
-Missing input files for rule all:
-    affected files:
-        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlotPrimary/heatmap.jpg
-        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlotPrimary/variant_count.jpg
-        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlotPrimary/sv_site_per_genome.jpg
-        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlotPrimary/sample_upset.jpg

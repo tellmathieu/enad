@@ -1,8 +1,0 @@
-Building DAG of jobs...
-File path '/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/candidates_filtered.bed ' ends with whitespace. This is likely unintended. It can also lead to inconsistent results of the file-matching approach used by Snakemake.
-MissingInputException in rule plotStructuralRearrangementCombined in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased_new.smk, line 510:
-Missing input files for rule plotStructuralRearrangementCombined:
-    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr1_combined_output_plot.png
-    wildcards: chr=chr1
-    affected files:
-        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/candidates_filtered.bed 

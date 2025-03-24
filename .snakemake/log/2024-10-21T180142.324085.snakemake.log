@@ -1,3 +1,0 @@
-AttributeError in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 31:
-'list' object has no attribute 'strip'
-  File "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk", line 31, in <module>

@@ -1,3 +1,0 @@
-NameError in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 217:
-name 'main' is not defined
-  File "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk", line 217, in <module>

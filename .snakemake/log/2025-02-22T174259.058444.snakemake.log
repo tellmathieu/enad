@@ -1,6 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule compareSVs in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased_new.smk, line 633:
-Missing input files for rule compareSVs:
-    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1_compto5.vcf
-    affected files:
-        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/horse_05_608.hap2.snf

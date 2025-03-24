@@ -1,3 +1,0 @@
-IndexError in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 31:
-list index out of range
-  File "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk", line 31, in <module>

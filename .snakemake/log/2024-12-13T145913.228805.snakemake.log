@@ -1,7 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule alignToFirstControlPrimary in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased.smk, line 601:
-Missing input files for rule alignToFirstControlPrimary:
-    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.sam
-    wildcards: sample=horse_05_608
-    affected files:
-        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa

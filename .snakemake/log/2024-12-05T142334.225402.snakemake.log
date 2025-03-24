@@ -1,4 +1,0 @@
-Building DAG of jobs...
-WildcardError in rule alignToChainOfGenomes in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased.smk, line 439:
-Wildcards in input files cannot be determined from output files:
-'comp1'

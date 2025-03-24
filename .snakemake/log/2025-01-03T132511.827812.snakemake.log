@@ -1,8 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule alignToChainOfGenomes in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased_new.smk, line 446:
-Missing input files for rule alignToChainOfGenomes:
-    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56comparison.sam
-    wildcards: comp1=horse_05_608, comp2=horse_04_56
-    affected files:
-        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa
-        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa
