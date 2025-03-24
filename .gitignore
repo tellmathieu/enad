@@ -14,3 +14,4 @@ intermediate_files/
 resources/
 wget_index.html.tmp
 *.pdf
+.snakemake/
