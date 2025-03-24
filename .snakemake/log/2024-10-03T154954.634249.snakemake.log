@@ -1,0 +1,79 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                                count
+-------------------------------  -------
+all                                    1
+makeGenomeFileForPlotSRCombined        1
+refChangeNCtoChr                       1
+refSameChrNames                        1
+total                                  4
+
+Select jobs to execute...
+
+[Thu Oct  3 15:49:56 2024]
+rule refSameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/cleaned_ref_genome.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr.fa
+    jobid: 29
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr.fa
+    resources: tmpdir=/tmp
+
+
+    reflines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    refcurrentline=1
+    while [ "$refcurrentline" -le "$reflines" ]
+    do
+      refname=$(sed "${refcurrentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      grep -A1 "${refname}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/cleaned_ref_genome.fa >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr.fa
+      refcurrentline=$(($refcurrentline+1))
+    done
+  
+[Thu Oct  3 15:50:44 2024]
+Finished job 29.
+1 of 4 steps (25%) done
+Select jobs to execute...
+
+[Thu Oct  3 15:50:44 2024]
+rule refChangeNCtoChr:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    jobid: 28
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr.fa
+    resources: tmpdir=/tmp
+
+
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    reflines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    refcurrentline=1
+    while [ "$refcurrentline" -le "$reflines" ]
+    do
+      refchr=$(sed "${refcurrentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+      refnc=$(sed "${refcurrentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      sed -i "s/${refnc}/${refchr}/g" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+      refcurrentline=$(($refcurrentline+1))
+    done
+  
+[Thu Oct  3 15:59:29 2024]
+Finished job 28.
+2 of 4 steps (50%) done
+Select jobs to execute...
+
+[Thu Oct  3 15:59:29 2024]
+rule makeGenomeFileForPlotSRCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/reference_horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/reference_horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/reference_horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/reference_horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/reference_horse_05_608syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/reference_horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt
+    jobid: 27
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    resources: tmpdir=/tmp
+
+RuleException in rule makeGenomeFileForPlotSRCombined in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 360:
+AttributeError: 'Wildcards' object has no attribute 'sample', when formatting the following:
+
+    echo "#file  name" > {output.genomeTxtFile}
+    echo "{input.refChr2}	reference	lw:1.5" >> {output.genomeTxtFile}
+    echo "{input.ragtagChr2}	{wildcards.sample}	lw:1.5" >> {output.genomeTxtFile}
+  

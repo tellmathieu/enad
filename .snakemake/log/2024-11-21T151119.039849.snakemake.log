@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule de_novo_gfa_to_fa in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased.smk, line 76:
+Missing input files for rule de_novo_gfa_to_fa:
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608hap/horse_05_608hap.asm.bp.1.p_ctg.fa
+    wildcards: sample=horse_05_608hap, phases=1
+    affected files:
+        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608hap/horse_05_608hap.asm.bp.1.p_ctg.gfa

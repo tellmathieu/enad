@@ -1,0 +1,2 @@
+SyntaxError in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 136:
+Expected name or colon after rule or checkpoint keyword. (hifi_assembly_analysis.smk, line 136)

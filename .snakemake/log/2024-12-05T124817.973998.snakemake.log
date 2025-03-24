@@ -1,0 +1,13 @@
+Building DAG of jobs...
+AmbiguousRuleException:
+Rules sameChrNamesPrimary and sameChrNames are ambiguous for the file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/horse_05_608.hap1_scaffold_chr.fa.
+Consider starting rule output with a unique prefix, constrain your wildcards, or use the ruleorder directive.
+Wildcards:
+	sameChrNamesPrimary: sample=horse_05_608.hap1
+	sameChrNames: phases=hap1,sample=horse_05_608
+Expected input files:
+	sameChrNamesPrimary: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/horse_05_608.hap1_rename.scaffold.fasta /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/cleaned_ref_genome.fa
+	sameChrNames: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/horse_05_608.hap1_rename.scaffold.fasta /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/cleaned_ref_genome.fa
+Expected output files:
+	sameChrNamesPrimary: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/horse_05_608.hap1_scaffold_chr.fa
+	sameChrNames: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/horse_05_608.hap1_scaffold_chr.fa

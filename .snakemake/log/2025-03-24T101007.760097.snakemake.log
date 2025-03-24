@@ -1,0 +1,68 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 100
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000
+Job stats:
+job                   count
+------------------  -------
+all                       1
+intersectGFFandVCF        2
+total                     3
+
+Select jobs to execute...
+
+[Mon Mar 24 10:10:14 2025]
+rule intersectGFFandVCF:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs.compto5-2_filtered.vcf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap1.gff, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap2.gff
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phasedSVs.compto5-2_vcf_gff_intersect.txt
+    jobid: 64
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phasedSVs.compto5-2_vcf_gff_intersect.txt
+    wildcards: hap=phasedSVs.compto5-2
+    resources: tmpdir=/tmp
+
+
+    bedtools intersect -wo -a /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap1.gff /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap2.gff -b /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs.compto5-2_filtered.vcf > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phasedSVs.compto5-2_vcf_gff_intersect.txt
+  
+
+[Mon Mar 24 10:10:14 2025]
+rule intersectGFFandVCF:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs.compto5-1_filtered.vcf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap1.gff, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap2.gff
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phasedSVs.compto5-1_vcf_gff_intersect.txt
+    jobid: 63
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phasedSVs.compto5-1_vcf_gff_intersect.txt
+    wildcards: hap=phasedSVs.compto5-1
+    resources: tmpdir=/tmp
+
+
+    bedtools intersect -wo -a /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap1.gff /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap2.gff -b /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs.compto5-1_filtered.vcf > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phasedSVs.compto5-1_vcf_gff_intersect.txt
+  
+[Mon Mar 24 10:10:14 2025]
+[Mon Mar 24 10:10:14 2025]
+Error in rule intersectGFFandVCF:
+    jobid: 64
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs.compto5-2_filtered.vcf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap1.gff, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap2.gff
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phasedSVs.compto5-2_vcf_gff_intersect.txt
+    shell:
+        
+    bedtools intersect -wo -a /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap1.gff /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap2.gff -b /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs.compto5-2_filtered.vcf > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phasedSVs.compto5-2_vcf_gff_intersect.txt
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule intersectGFFandVCF:
+    jobid: 63
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs.compto5-1_filtered.vcf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap1.gff, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap2.gff
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phasedSVs.compto5-1_vcf_gff_intersect.txt
+    shell:
+        
+    bedtools intersect -wo -a /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap1.gff /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_hap2.gff -b /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs.compto5-1_filtered.vcf > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phasedSVs.compto5-1_vcf_gff_intersect.txt
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job intersectGFFandVCF since they might be corrupted:
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phasedSVs.compto5-2_vcf_gff_intersect.txt
+Removing output files of failed job intersectGFFandVCF since they might be corrupted:
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phasedSVs.compto5-1_vcf_gff_intersect.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-24T101007.760097.snakemake.log

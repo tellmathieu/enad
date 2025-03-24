@@ -1,0 +1,1311 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                                    count
+-----------------------------------  -------
+alignToChainOfGenomes                      5
+alignToReference                           6
+all                                        1
+changeNCtoChr                              6
+correct                                    5
+makeGenomeFileForPlotSR                    6
+plotStructuralRearrangement                6
+plotStructuralRearrangementCombined        1
+removeRagTag                               6
+sameChrNames                               6
+scaffold                                   6
+syntenyAnalysis                            6
+syntenyAnalysisForCombined                 5
+total                                     65
+
+Select jobs to execute...
+
+[Mon Oct 21 11:46:24 2024]
+rule correct:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/busco.pdf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.p_ctg.fa, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/ragtag.correct.fasta
+    jobid: 7
+    reason: Code has changed since last execution
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    # this ensures that all the code for this step is run again
+    rm -f horse_03_238/ragtag.correct.* 
+
+    ragtag.py correct       -u       -o horse_03_238       /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.p_ctg.fa
+  
+[Mon Oct 21 12:04:56 2024]
+Finished job 7.
+1 of 65 steps (2%) done
+Select jobs to execute...
+
+[Mon Oct 21 12:04:56 2024]
+rule correct:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/busco.pdf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.p_ctg.fa, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/ragtag.correct.fasta
+    jobid: 73
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/ragtag.correct.fasta
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    # this ensures that all the code for this step is run again
+    rm -f horse_05_608/ragtag.correct.* 
+
+    ragtag.py correct       -u       -o horse_05_608       /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.p_ctg.fa
+  
+[Mon Oct 21 12:26:08 2024]
+Finished job 73.
+2 of 65 steps (3%) done
+Select jobs to execute...
+
+[Mon Oct 21 12:26:08 2024]
+rule correct:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/busco.pdf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.p_ctg.fa, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/ragtag.correct.fasta
+    jobid: 64
+    reason: Code has changed since last execution
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    # this ensures that all the code for this step is run again
+    rm -f horse_06_1212/ragtag.correct.* 
+
+    ragtag.py correct       -u       -o horse_06_1212       /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.p_ctg.fa
+  
+[Mon Oct 21 12:47:14 2024]
+Finished job 64.
+3 of 65 steps (5%) done
+Select jobs to execute...
+
+[Mon Oct 21 12:47:14 2024]
+rule scaffold:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/ragtag.correct.fasta, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/ragtag.scaffold.fasta
+    jobid: 63
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/ragtag.correct.fasta
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    # this ensures that all the code for this step is run again
+    rm -f horse_06_1212/ragtag.scaffold.*
+
+    ragtag.py scaffold       -u       -o horse_06_1212       /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/ragtag.correct.fasta
+  
+[Mon Oct 21 13:04:04 2024]
+Finished job 63.
+4 of 65 steps (6%) done
+Select jobs to execute...
+
+[Mon Oct 21 13:04:04 2024]
+rule removeRagTag:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/ragtag.scaffold.fasta
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_rename.scaffold.fasta
+    jobid: 62
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/ragtag.scaffold.fasta
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp
+
+
+    sed 's/_RagTag//' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/ragtag.scaffold.fasta > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_rename.scaffold.fasta
+  
+
+[Mon Oct 21 13:04:04 2024]
+rule scaffold:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/ragtag.correct.fasta, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/ragtag.scaffold.fasta
+    jobid: 6
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/ragtag.correct.fasta
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    # this ensures that all the code for this step is run again
+    rm -f horse_03_238/ragtag.scaffold.*
+
+    ragtag.py scaffold       -u       -o horse_03_238       /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/ragtag.correct.fasta
+  
+[Mon Oct 21 13:04:17 2024]
+Finished job 62.
+5 of 65 steps (8%) done
+Select jobs to execute...
+
+[Mon Oct 21 13:04:17 2024]
+rule sameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/cleaned_ref_genome.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr.fa
+    jobid: 61
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_rename.scaffold.fasta
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp
+
+
+    horse_06_1212lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_06_1212currentline=1
+    while [ "$horse_06_1212currentline" -le "$horse_06_1212lines" ]
+    do
+      horse_06_1212name=$(sed "${horse_06_1212currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      grep -A1 "${horse_06_1212name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr.fa
+      horse_06_1212currentline=$(($horse_06_1212currentline+1))
+    done
+  
+[Mon Oct 21 13:05:00 2024]
+Finished job 61.
+6 of 65 steps (9%) done
+Select jobs to execute...
+
+[Mon Oct 21 13:05:00 2024]
+rule changeNCtoChr:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr_only.fa
+    jobid: 60
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr.fa
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp
+
+
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr_only.fa
+    horse_06_1212lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_06_1212currentline=1
+    while [ "$horse_06_1212currentline" -le "$horse_06_1212lines" ]
+    do
+      horse_06_1212chr=$(sed "${horse_06_1212currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+      horse_06_1212nc=$(sed "${horse_06_1212currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      sed -i "s/${horse_06_1212nc}/${horse_06_1212chr}/g" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa
+      horse_06_1212currentline=$(($horse_06_1212currentline+1))
+    done
+  
+[Mon Oct 21 13:11:19 2024]
+Finished job 60.
+7 of 65 steps (11%) done
+Select jobs to execute...
+[Mon Oct 21 13:20:11 2024]
+Finished job 6.
+8 of 65 steps (12%) done
+
+[Mon Oct 21 13:20:11 2024]
+rule correct:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/busco.pdf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56/horse_04_56.asm.bp.p_ctg.fa, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/ragtag.correct.fasta
+    jobid: 46
+    reason: Code has changed since last execution
+    wildcards: sample=horse_04_56
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    # this ensures that all the code for this step is run again
+    rm -f horse_04_56/ragtag.correct.* 
+
+    ragtag.py correct       -u       -o horse_04_56       /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56/horse_04_56.asm.bp.p_ctg.fa
+  
+
+[Mon Oct 21 13:20:11 2024]
+rule removeRagTag:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/ragtag.scaffold.fasta
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_rename.scaffold.fasta
+    jobid: 5
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/ragtag.scaffold.fasta
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp
+
+
+    sed 's/_RagTag//' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/ragtag.scaffold.fasta > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_rename.scaffold.fasta
+  
+[Mon Oct 21 13:20:24 2024]
+Finished job 5.
+9 of 65 steps (14%) done
+Select jobs to execute...
+
+[Mon Oct 21 13:20:24 2024]
+rule sameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/cleaned_ref_genome.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr.fa
+    jobid: 4
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr.fa; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_rename.scaffold.fasta
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp
+
+
+    horse_03_238lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_03_238currentline=1
+    while [ "$horse_03_238currentline" -le "$horse_03_238lines" ]
+    do
+      horse_03_238name=$(sed "${horse_03_238currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      grep -A1 "${horse_03_238name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr.fa
+      horse_03_238currentline=$(($horse_03_238currentline+1))
+    done
+  
+[Mon Oct 21 13:21:07 2024]
+Finished job 4.
+10 of 65 steps (15%) done
+Select jobs to execute...
+
+[Mon Oct 21 13:21:07 2024]
+rule changeNCtoChr:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr_only.fa
+    jobid: 3
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr.fa
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp
+
+
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr_only.fa
+    horse_03_238lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_03_238currentline=1
+    while [ "$horse_03_238currentline" -le "$horse_03_238lines" ]
+    do
+      horse_03_238chr=$(sed "${horse_03_238currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+      horse_03_238nc=$(sed "${horse_03_238currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      sed -i "s/${horse_03_238nc}/${horse_03_238chr}/g" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa
+      horse_03_238currentline=$(($horse_03_238currentline+1))
+    done
+  
+[Mon Oct 21 13:27:22 2024]
+Finished job 3.
+11 of 65 steps (17%) done
+Select jobs to execute...
+[Mon Oct 21 13:37:44 2024]
+Finished job 46.
+12 of 65 steps (18%) done
+
+[Mon Oct 21 13:37:44 2024]
+rule alignToChainOfGenomes:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238comparison.sam
+    jobid: 91
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa
+    wildcards: comp1=horse_06_1212, comp2=horse_03_238
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238comparison.sam
+  
+[Mon Oct 21 13:46:15 2024]
+Finished job 91.
+13 of 65 steps (20%) done
+Select jobs to execute...
+
+[Mon Oct 21 13:46:15 2024]
+rule scaffold:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/ragtag.correct.fasta, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/ragtag.scaffold.fasta
+    jobid: 45
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/ragtag.correct.fasta
+    wildcards: sample=horse_04_56
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    # this ensures that all the code for this step is run again
+    rm -f horse_04_56/ragtag.scaffold.*
+
+    ragtag.py scaffold       -u       -o horse_04_56       /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/ragtag.correct.fasta
+  
+
+[Mon Oct 21 13:46:15 2024]
+rule syntenyAnalysisForCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out
+    jobid: 90
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238comparison.sam
+    wildcards: comp1=horse_06_1212, comp2=horse_03_238
+    threads: 15
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa       -k -F S       --prefix horse_06_1212-horse_03_238      --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri       --nc 15       --no-chrmatch
+  
+[Mon Oct 21 13:50:29 2024]
+Finished job 90.
+14 of 65 steps (22%) done
+Select jobs to execute...
+[Mon Oct 21 14:02:08 2024]
+Finished job 45.
+15 of 65 steps (23%) done
+
+[Mon Oct 21 14:02:08 2024]
+rule scaffold:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/ragtag.correct.fasta, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/ragtag.scaffold.fasta
+    jobid: 72
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/ragtag.correct.fasta; Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    # this ensures that all the code for this step is run again
+    rm -f horse_05_608/ragtag.scaffold.*
+
+    ragtag.py scaffold       -u       -o horse_05_608       /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/ragtag.correct.fasta
+  
+
+[Mon Oct 21 14:02:08 2024]
+rule removeRagTag:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/ragtag.scaffold.fasta
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_rename.scaffold.fasta
+    jobid: 44
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/ragtag.scaffold.fasta
+    wildcards: sample=horse_04_56
+    resources: tmpdir=/tmp
+
+
+    sed 's/_RagTag//' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/ragtag.scaffold.fasta > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_rename.scaffold.fasta
+  
+[Mon Oct 21 14:02:20 2024]
+Finished job 44.
+16 of 65 steps (25%) done
+Select jobs to execute...
+
+[Mon Oct 21 14:02:20 2024]
+rule sameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/cleaned_ref_genome.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr.fa
+    jobid: 43
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_rename.scaffold.fasta
+    wildcards: sample=horse_04_56
+    resources: tmpdir=/tmp
+
+
+    horse_04_56lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_04_56currentline=1
+    while [ "$horse_04_56currentline" -le "$horse_04_56lines" ]
+    do
+      horse_04_56name=$(sed "${horse_04_56currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      grep -A1 "${horse_04_56name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr.fa
+      horse_04_56currentline=$(($horse_04_56currentline+1))
+    done
+  
+[Mon Oct 21 14:03:03 2024]
+Finished job 43.
+17 of 65 steps (26%) done
+Select jobs to execute...
+
+[Mon Oct 21 14:03:03 2024]
+rule changeNCtoChr:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_ref_chr_only.fa
+    jobid: 42
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr.fa
+    wildcards: sample=horse_04_56
+    resources: tmpdir=/tmp
+
+
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_ref_chr_only.fa
+    horse_04_56lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_04_56currentline=1
+    while [ "$horse_04_56currentline" -le "$horse_04_56lines" ]
+    do
+      horse_04_56chr=$(sed "${horse_04_56currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+      horse_04_56nc=$(sed "${horse_04_56currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      sed -i "s/${horse_04_56nc}/${horse_04_56chr}/g" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa
+      horse_04_56currentline=$(($horse_04_56currentline+1))
+    done
+  
+[Mon Oct 21 14:09:21 2024]
+Finished job 42.
+18 of 65 steps (28%) done
+Select jobs to execute...
+[Mon Oct 21 14:18:56 2024]
+Finished job 72.
+19 of 65 steps (29%) done
+
+[Mon Oct 21 14:18:56 2024]
+rule removeRagTag:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/ragtag.scaffold.fasta
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_rename.scaffold.fasta
+    jobid: 71
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/ragtag.scaffold.fasta
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+    sed 's/_RagTag//' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/ragtag.scaffold.fasta > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_rename.scaffold.fasta
+  
+
+[Mon Oct 21 14:18:56 2024]
+rule alignToChainOfGenomes:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212comparison.sam
+    jobid: 89
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa
+    wildcards: comp1=horse_04_56, comp2=horse_06_1212
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212comparison.sam
+  
+[Mon Oct 21 14:19:09 2024]
+Finished job 71.
+20 of 65 steps (31%) done
+Select jobs to execute...
+
+[Mon Oct 21 14:19:09 2024]
+rule sameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/cleaned_ref_genome.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr.fa
+    jobid: 70
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_rename.scaffold.fasta
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+    horse_05_608lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_05_608currentline=1
+    while [ "$horse_05_608currentline" -le "$horse_05_608lines" ]
+    do
+      horse_05_608name=$(sed "${horse_05_608currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      grep -A1 "${horse_05_608name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr.fa
+      horse_05_608currentline=$(($horse_05_608currentline+1))
+    done
+  
+[Mon Oct 21 14:19:53 2024]
+Finished job 70.
+21 of 65 steps (32%) done
+Select jobs to execute...
+
+[Mon Oct 21 14:19:54 2024]
+rule changeNCtoChr:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr_only.fa
+    jobid: 69
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr.fa
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr_only.fa
+    horse_05_608lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_05_608currentline=1
+    while [ "$horse_05_608currentline" -le "$horse_05_608lines" ]
+    do
+      horse_05_608chr=$(sed "${horse_05_608currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+      horse_05_608nc=$(sed "${horse_05_608currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      sed -i "s/${horse_05_608nc}/${horse_05_608chr}/g" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa
+      horse_05_608currentline=$(($horse_05_608currentline+1))
+    done
+  
+[Mon Oct 21 14:26:10 2024]
+Finished job 69.
+22 of 65 steps (34%) done
+Select jobs to execute...
+[Mon Oct 21 14:27:44 2024]
+Finished job 89.
+23 of 65 steps (35%) done
+
+[Mon Oct 21 14:27:44 2024]
+rule syntenyAnalysisForCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out
+    jobid: 88
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212comparison.sam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa
+    wildcards: comp1=horse_04_56, comp2=horse_06_1212
+    threads: 15
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa       -k -F S       --prefix horse_04_56-horse_06_1212      --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri       --nc 15       --no-chrmatch
+  
+
+[Mon Oct 21 14:27:44 2024]
+rule alignToReference:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_ref_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_comparison.sam
+    jobid: 47
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa
+    wildcards: sample=horse_04_56
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_ref_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_comparison.sam
+  
+[Mon Oct 21 14:31:56 2024]
+Finished job 88.
+24 of 65 steps (37%) done
+Select jobs to execute...
+[Mon Oct 21 14:36:07 2024]
+Finished job 47.
+25 of 65 steps (38%) done
+
+[Mon Oct 21 14:36:07 2024]
+rule alignToChainOfGenomes:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56comparison.sam
+    jobid: 87
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa
+    wildcards: comp1=horse_05_608, comp2=horse_04_56
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56comparison.sam
+  
+
+[Mon Oct 21 14:36:07 2024]
+rule syntenyAnalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/syri.out
+    jobid: 41
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_comparison.sam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa
+    wildcards: sample=horse_04_56
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_ref_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa       -k -F S       --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri
+  
+[Mon Oct 21 14:40:49 2024]
+Finished job 41.
+26 of 65 steps (40%) done
+Select jobs to execute...
+
+[Mon Oct 21 14:40:49 2024]
+rule makeGenomeFileForPlotSR:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_ref_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/reference_horse_04_56syri.out
+    jobid: 48
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa
+    wildcards: sample=horse_04_56
+    resources: tmpdir=/tmp
+
+
+    echo "#file  name" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_ref_chr_only.fa	reference	lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa	horse_04_56	lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt
+
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/reference_horse_04_56syri.out
+  
+[Mon Oct 21 14:40:50 2024]
+Finished job 48.
+27 of 65 steps (42%) done
+Select jobs to execute...
+
+[Mon Oct 21 14:40:50 2024]
+rule plotStructuralRearrangement:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/horse_04_56_output_plot.png
+    jobid: 40
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/syri.out
+    wildcards: sample=horse_04_56
+    resources: tmpdir=/tmp
+
+
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt       -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/horse_04_56_output_plot.png
+  
+[Mon Oct 21 14:42:35 2024]
+Finished job 40.
+28 of 65 steps (43%) done
+Select jobs to execute...
+[Mon Oct 21 14:44:26 2024]
+Finished job 87.
+29 of 65 steps (45%) done
+
+[Mon Oct 21 14:44:26 2024]
+rule syntenyAnalysisForCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out
+    jobid: 86
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56comparison.sam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa
+    wildcards: comp1=horse_05_608, comp2=horse_04_56
+    threads: 15
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa       -k -F S       --prefix horse_05_608-horse_04_56      --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri       --nc 15       --no-chrmatch
+  
+
+[Mon Oct 21 14:44:26 2024]
+rule alignToReference:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_comparison.sam
+    jobid: 74
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr_only.fa
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_comparison.sam
+  
+[Mon Oct 21 14:48:37 2024]
+Finished job 86.
+30 of 65 steps (46%) done
+Select jobs to execute...
+[Mon Oct 21 14:52:46 2024]
+Finished job 74.
+31 of 65 steps (48%) done
+
+[Mon Oct 21 14:52:46 2024]
+rule correct:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/busco.pdf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.p_ctg.fa, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/ragtag.correct.fasta
+    jobid: 82
+    reason: Code has changed since last execution
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    # this ensures that all the code for this step is run again
+    rm -f horse_02_205/ragtag.correct.* 
+
+    ragtag.py correct       -u       -o horse_02_205       /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.p_ctg.fa
+  
+
+[Mon Oct 21 14:52:46 2024]
+rule syntenyAnalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/syri.out
+    jobid: 68
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_comparison.sam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr_only.fa
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa       -k -F S       --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri
+  
+[Mon Oct 21 14:57:48 2024]
+Finished job 68.
+32 of 65 steps (49%) done
+Select jobs to execute...
+
+[Mon Oct 21 14:57:48 2024]
+rule makeGenomeFileForPlotSR:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/reference_horse_05_608syri.out
+    jobid: 75
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr_only.fa
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+    echo "#file  name" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr_only.fa	reference	lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa	horse_05_608	lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/reference_horse_05_608syri.out
+  
+[Mon Oct 21 14:57:49 2024]
+Finished job 75.
+33 of 65 steps (51%) done
+Select jobs to execute...
+
+[Mon Oct 21 14:57:49 2024]
+rule plotStructuralRearrangement:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/horse_05_608_output_plot.png
+    jobid: 67
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt       -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/horse_05_608_output_plot.png
+  
+[Mon Oct 21 14:59:34 2024]
+Finished job 67.
+34 of 65 steps (52%) done
+Select jobs to execute...
+[Mon Oct 21 15:12:16 2024]
+Finished job 82.
+35 of 65 steps (54%) done
+
+[Mon Oct 21 15:12:16 2024]
+rule scaffold:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/ragtag.correct.fasta, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/ragtag.scaffold.fasta
+    jobid: 54
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/ragtag.scaffold.fasta; Code has changed since last execution
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    # this ensures that all the code for this step is run again
+    rm -f horse_01_200/ragtag.scaffold.*
+
+    ragtag.py scaffold       -u       -o horse_01_200       /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/ragtag.correct.fasta
+  
+[Mon Oct 21 15:29:14 2024]
+Finished job 54.
+36 of 65 steps (55%) done
+Select jobs to execute...
+
+[Mon Oct 21 15:29:14 2024]
+rule scaffold:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/ragtag.correct.fasta, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/ragtag.scaffold.fasta
+    jobid: 81
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/ragtag.correct.fasta
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    # this ensures that all the code for this step is run again
+    rm -f horse_02_205/ragtag.scaffold.*
+
+    ragtag.py scaffold       -u       -o horse_02_205       /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/ragtag.correct.fasta
+  
+
+[Mon Oct 21 15:29:14 2024]
+rule removeRagTag:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/ragtag.scaffold.fasta
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_rename.scaffold.fasta
+    jobid: 53
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/ragtag.scaffold.fasta
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp
+
+
+    sed 's/_RagTag//' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/ragtag.scaffold.fasta > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_rename.scaffold.fasta
+  
+[Mon Oct 21 15:29:27 2024]
+Finished job 53.
+37 of 65 steps (57%) done
+Select jobs to execute...
+
+[Mon Oct 21 15:29:27 2024]
+rule sameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/cleaned_ref_genome.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa
+    jobid: 52
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_rename.scaffold.fasta
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp
+
+
+    horse_01_200lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_01_200currentline=1
+    while [ "$horse_01_200currentline" -le "$horse_01_200lines" ]
+    do
+      horse_01_200name=$(sed "${horse_01_200currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      grep -A1 "${horse_01_200name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa
+      horse_01_200currentline=$(($horse_01_200currentline+1))
+    done
+  
+[Mon Oct 21 15:30:11 2024]
+Finished job 52.
+38 of 65 steps (58%) done
+Select jobs to execute...
+
+[Mon Oct 21 15:30:11 2024]
+rule changeNCtoChr:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr_only.fa
+    jobid: 51
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp
+
+
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr_only.fa
+    horse_01_200lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_01_200currentline=1
+    while [ "$horse_01_200currentline" -le "$horse_01_200lines" ]
+    do
+      horse_01_200chr=$(sed "${horse_01_200currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+      horse_01_200nc=$(sed "${horse_01_200currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      sed -i "s/${horse_01_200nc}/${horse_01_200chr}/g" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa
+      horse_01_200currentline=$(($horse_01_200currentline+1))
+    done
+  
+[Mon Oct 21 15:36:22 2024]
+Finished job 51.
+39 of 65 steps (60%) done
+Select jobs to execute...
+[Mon Oct 21 15:45:26 2024]
+Finished job 81.
+40 of 65 steps (62%) done
+
+[Mon Oct 21 15:45:26 2024]
+rule alignToReference:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_comparison.sam
+    jobid: 56
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_comparison.sam
+  
+
+[Mon Oct 21 15:45:26 2024]
+rule removeRagTag:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/ragtag.scaffold.fasta
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_rename.scaffold.fasta
+    jobid: 80
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/ragtag.scaffold.fasta
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp
+
+
+    sed 's/_RagTag//' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/ragtag.scaffold.fasta > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_rename.scaffold.fasta
+  
+[Mon Oct 21 15:45:38 2024]
+Finished job 80.
+41 of 65 steps (63%) done
+Select jobs to execute...
+
+[Mon Oct 21 15:45:39 2024]
+rule sameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/cleaned_ref_genome.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr.fa
+    jobid: 79
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_rename.scaffold.fasta
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp
+
+
+    horse_02_205lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_02_205currentline=1
+    while [ "$horse_02_205currentline" -le "$horse_02_205lines" ]
+    do
+      horse_02_205name=$(sed "${horse_02_205currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      grep -A1 "${horse_02_205name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr.fa
+      horse_02_205currentline=$(($horse_02_205currentline+1))
+    done
+  
+[Mon Oct 21 15:46:21 2024]
+Finished job 79.
+42 of 65 steps (65%) done
+Select jobs to execute...
+
+[Mon Oct 21 15:46:22 2024]
+rule changeNCtoChr:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr_only.fa
+    jobid: 78
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr.fa
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp
+
+
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr_only.fa
+    horse_02_205lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_02_205currentline=1
+    while [ "$horse_02_205currentline" -le "$horse_02_205lines" ]
+    do
+      horse_02_205chr=$(sed "${horse_02_205currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+      horse_02_205nc=$(sed "${horse_02_205currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      sed -i "s/${horse_02_205nc}/${horse_02_205chr}/g" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa
+      horse_02_205currentline=$(($horse_02_205currentline+1))
+    done
+  
+[Mon Oct 21 15:52:34 2024]
+Finished job 78.
+43 of 65 steps (66%) done
+Select jobs to execute...
+[Mon Oct 21 15:54:30 2024]
+Finished job 56.
+44 of 65 steps (68%) done
+
+[Mon Oct 21 15:54:30 2024]
+rule syntenyAnalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/syri.out
+    jobid: 50
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_comparison.sam
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa       -k -F S       --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri
+  
+
+[Mon Oct 21 15:54:30 2024]
+rule alignToReference:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_comparison.sam
+    jobid: 83
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_comparison.sam
+  
+[Mon Oct 21 15:59:15 2024]
+Finished job 50.
+45 of 65 steps (69%) done
+Select jobs to execute...
+
+[Mon Oct 21 15:59:15 2024]
+rule makeGenomeFileForPlotSR:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/reference_horse_01_200syri.out
+    jobid: 57
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp
+
+
+    echo "#file  name" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr_only.fa	reference	lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa	horse_01_200	lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt
+
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/reference_horse_01_200syri.out
+  
+[Mon Oct 21 15:59:16 2024]
+Finished job 57.
+46 of 65 steps (71%) done
+Select jobs to execute...
+
+[Mon Oct 21 15:59:16 2024]
+rule plotStructuralRearrangement:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/horse_01_200_output_plot.png
+    jobid: 49
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/syri.out
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp
+
+
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt       -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/horse_01_200_output_plot.png
+  
+[Mon Oct 21 16:01:00 2024]
+Finished job 49.
+47 of 65 steps (72%) done
+Select jobs to execute...
+[Mon Oct 21 16:02:41 2024]
+Finished job 83.
+48 of 65 steps (74%) done
+
+[Mon Oct 21 16:02:41 2024]
+rule alignToChainOfGenomes:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205comparison.sam
+    jobid: 95
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa
+    wildcards: comp1=horse_01_200, comp2=horse_02_205
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205comparison.sam
+  
+
+[Mon Oct 21 16:02:41 2024]
+rule syntenyAnalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/syri.out
+    jobid: 77
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_comparison.sam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa       -k -F S       --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri
+  
+[Mon Oct 21 16:07:11 2024]
+Finished job 77.
+49 of 65 steps (75%) done
+Select jobs to execute...
+
+[Mon Oct 21 16:07:11 2024]
+rule makeGenomeFileForPlotSR:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/reference_horse_02_205syri.out
+    jobid: 84
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp
+
+
+    echo "#file  name" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr_only.fa	reference	lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa	horse_02_205	lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/reference_horse_02_205syri.out
+  
+[Mon Oct 21 16:07:12 2024]
+Finished job 84.
+50 of 65 steps (77%) done
+Select jobs to execute...
+
+[Mon Oct 21 16:07:12 2024]
+rule plotStructuralRearrangement:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/horse_02_205_output_plot.png
+    jobid: 76
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp
+
+
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt       -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/horse_02_205_output_plot.png
+  
+[Mon Oct 21 16:08:58 2024]
+Finished job 76.
+51 of 65 steps (78%) done
+Select jobs to execute...
+[Mon Oct 21 16:11:58 2024]
+Finished job 95.
+52 of 65 steps (80%) done
+
+[Mon Oct 21 16:11:58 2024]
+rule alignToChainOfGenomes:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200comparison.sam
+    jobid: 93
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa
+    wildcards: comp1=horse_03_238, comp2=horse_01_200
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200comparison.sam
+  
+
+[Mon Oct 21 16:11:58 2024]
+rule syntenyAnalysisForCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    jobid: 94
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205comparison.sam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa
+    wildcards: comp1=horse_01_200, comp2=horse_02_205
+    threads: 15
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa       -k -F S       --prefix horse_01_200-horse_02_205      --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri       --nc 15       --no-chrmatch
+  
+[Mon Oct 21 16:16:03 2024]
+Finished job 94.
+53 of 65 steps (82%) done
+Select jobs to execute...
+[Mon Oct 21 16:21:21 2024]
+Finished job 93.
+54 of 65 steps (83%) done
+
+[Mon Oct 21 16:21:21 2024]
+rule syntenyAnalysisForCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out
+    jobid: 92
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200comparison.sam
+    wildcards: comp1=horse_03_238, comp2=horse_01_200
+    threads: 15
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa       -k -F S       --prefix horse_03_238-horse_01_200      --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri       --nc 15       --no-chrmatch
+  
+
+[Mon Oct 21 16:21:21 2024]
+rule alignToReference:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_comparison.sam
+    jobid: 65
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr_only.fa
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_comparison.sam
+  
+[Mon Oct 21 16:25:26 2024]
+Finished job 92.
+55 of 65 steps (85%) done
+Select jobs to execute...
+
+[Mon Oct 21 16:25:26 2024]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/reference_horse_05_608syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_combined_output_plot.png
+    jobid: 85
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/reference_horse_05_608syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    resources: tmpdir=/tmp
+
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    SR+=("--sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/reference_horse_05_608syri.out")
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_combined_output_plot.png"       | bash
+  
+[Mon Oct 21 16:29:53 2024]
+Finished job 65.
+56 of 65 steps (86%) done
+Select jobs to execute...
+
+[Mon Oct 21 16:29:54 2024]
+rule syntenyAnalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/syri.out
+    jobid: 59
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_comparison.sam
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa       -k -F S       --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri
+  
+
+[Mon Oct 21 16:29:54 2024]
+rule alignToReference:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_comparison.sam
+    jobid: 38
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr_only.fa
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_comparison.sam
+  
+[Mon Oct 21 16:31:41 2024]
+Finished job 85.
+57 of 65 steps (88%) done
+[Mon Oct 21 16:34:36 2024]
+Finished job 59.
+58 of 65 steps (89%) done
+Select jobs to execute...
+
+[Mon Oct 21 16:34:36 2024]
+rule makeGenomeFileForPlotSR:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/reference_horse_06_1212syri.out
+    jobid: 66
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/syri.out
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp
+
+
+    echo "#file  name" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr_only.fa	reference	lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa	horse_06_1212	lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/reference_horse_06_1212syri.out
+  
+[Mon Oct 21 16:34:38 2024]
+Finished job 66.
+59 of 65 steps (91%) done
+Select jobs to execute...
+
+[Mon Oct 21 16:34:38 2024]
+rule plotStructuralRearrangement:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/horse_06_1212_output_plot.png
+    jobid: 58
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp
+
+
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt       -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/horse_06_1212_output_plot.png
+  
+[Mon Oct 21 16:36:19 2024]
+Finished job 58.
+60 of 65 steps (92%) done
+[Mon Oct 21 16:38:40 2024]
+Finished job 38.
+61 of 65 steps (94%) done
+Select jobs to execute...
+
+[Mon Oct 21 16:38:40 2024]
+rule syntenyAnalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/syri.out
+    jobid: 2
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_comparison.sam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr_only.fa
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa       -k -F S       --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri
+  
+[Mon Oct 21 16:43:04 2024]
+Finished job 2.
+62 of 65 steps (95%) done
+Select jobs to execute...
+
+[Mon Oct 21 16:43:04 2024]
+rule makeGenomeFileForPlotSR:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/reference_horse_03_238syri.out
+    jobid: 39
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr_only.fa
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp
+
+
+    echo "#file  name" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr_only.fa	reference	lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa	horse_03_238	lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+
+    cp /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/reference_horse_03_238syri.out
+  
+[Mon Oct 21 16:43:05 2024]
+Finished job 39.
+63 of 65 steps (97%) done
+Select jobs to execute...
+
+[Mon Oct 21 16:43:05 2024]
+rule plotStructuralRearrangement:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/horse_03_238_output_plot.png
+    jobid: 1
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp
+
+
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt       -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/horse_03_238_output_plot.png
+  
+[Mon Oct 21 16:44:48 2024]
+Finished job 1.
+64 of 65 steps (98%) done
+Select jobs to execute...
+
+[Mon Oct 21 16:44:48 2024]
+localrule all:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/horse_03_238_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/horse_04_56_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/horse_01_200_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/horse_06_1212_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/horse_05_608_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/horse_02_205_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_combined_output_plot.png
+    jobid: 0
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_combined_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/horse_05_608_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/horse_02_205_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/horse_06_1212_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/horse_01_200_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/horse_04_56_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/horse_03_238_output_plot.png
+    resources: tmpdir=/tmp
+
+[Mon Oct 21 16:44:48 2024]
+Finished job 0.
+65 of 65 steps (100%) done
+Complete log: .snakemake/log/2024-10-21T114622.189033.snakemake.log

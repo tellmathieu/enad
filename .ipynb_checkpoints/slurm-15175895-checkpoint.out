@@ -1,0 +1,105 @@
+==========================================
+SLURM_JOB_ID = 15175895
+SLURM_NODELIST = cpu-3-54
+==========================================
+Loading [1mmamba/latest[22m
+  [94mINFO[0m: Module 'mamba/latest' is already loaded
+Run 'mamba init' to be able to run mamba activate/deactivate
+and start a new shell session. Or use conda to activate/deactivate.
+
+2024-08-26 12:14:41 INFO:	***** Start a BUSCO v5.7.1 analysis, current time: 08/26/2024 12:14:41 *****
+2024-08-26 12:14:41 INFO:	Configuring BUSCO with local environment
+2024-08-26 12:14:41 INFO:	Running genome mode
+2024-08-26 12:14:41 INFO:	'Force' option selected; overwriting previous results directory
+2024-08-26 12:14:41 INFO:	Downloading information on latest versions of BUSCO data...
+2024-08-26 12:14:44 INFO:	Input file is /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.p_ctg.fa
+2024-08-26 12:14:44 INFO:	No lineage specified. Running lineage auto selector.
+
+2024-08-26 12:14:44 INFO:	***** Starting Auto Select Lineage *****
+	This process runs BUSCO on the generic lineage datasets for the domains archaea, bacteria and eukaryota. Once the optimal domain is selected, BUSCO automatically attempts to find the most appropriate BUSCO dataset to use based on phylogenetic placement.
+	--auto-lineage-euk and --auto-lineage-prok are also available if you know your input assembly is, or is not, an eukaryote. See the user guide for more information.
+	A reminder: Busco evaluations are valid when an appropriate dataset is used, i.e., the dataset belongs to the lineage of the species to test. Because of overlapping markers/spurious matches among domains, busco matches in another domain do not necessarily mean that your genome/proteome contains sequences from this domain. However, a high busco score in multiple domains might help you identify possible contaminations.
+2024-08-26 12:14:55 INFO:	Running BUSCO using lineage dataset archaea_odb10 (prokaryota, 2024-01-08)
+2024-08-26 12:14:55 INFO:	Running 1 job(s) on bbtools, starting at 08/26/2024 12:14:55
+2024-08-26 12:14:56 INFO:	[bbtools]	1 of 1 task(s) completed
+2024-08-26 12:14:56 INFO:	***** Run Prodigal on input to predict and extract genes *****
+2024-08-26 12:14:56 INFO:	Running Prodigal with genetic code 11 in single mode
+2024-08-26 12:14:56 INFO:	Running 1 job(s) on prodigal, starting at 08/26/2024 12:14:56
+2024-08-26 12:15:24 INFO:	[prodigal]	1 of 1 task(s) completed
+2024-08-26 12:15:24 INFO:	Running Prodigal with genetic code 11 in meta mode
+2024-08-26 12:15:24 INFO:	Running 1 job(s) on prodigal, starting at 08/26/2024 12:15:24
+2024-08-26 12:15:27 INFO:	[prodigal]	1 of 1 task(s) completed
+2024-08-26 12:15:27 WARNING:	Prodigal did not recognize any genes matching the dataset archaea_odb10 in the input file. If this is unexpected, check your input file and your installation of Prodigal
+
+2024-08-26 12:15:38 INFO:	Running BUSCO using lineage dataset bacteria_odb10 (prokaryota, 2024-01-08)
+2024-08-26 12:15:38 INFO:	Skipping BBTools as already run
+2024-08-26 12:15:38 INFO:	***** Run Prodigal on input to predict and extract genes *****
+2024-08-26 12:15:38 INFO:	Running Prodigal with genetic code 4 in single mode
+2024-08-26 12:15:38 INFO:	Running 1 job(s) on prodigal, starting at 08/26/2024 12:15:38
+2024-08-26 12:16:13 INFO:	[prodigal]	1 of 1 task(s) completed
+2024-08-26 12:16:13 INFO:	Running Prodigal with genetic code 4 in meta mode
+2024-08-26 12:16:13 INFO:	Running 1 job(s) on prodigal, starting at 08/26/2024 12:16:13
+2024-08-26 12:16:16 INFO:	[prodigal]	1 of 1 task(s) completed
+2024-08-26 12:16:16 WARNING:	Prodigal did not recognize any genes matching the dataset bacteria_odb10 in the input file. If this is unexpected, check your input file and your installation of Prodigal
+
+2024-08-26 12:16:22 INFO:	Running BUSCO using lineage dataset eukaryota_odb10 (eukaryota, 2024-01-08)
+2024-08-26 12:16:22 INFO:	Skipping BBTools as already run
+2024-08-26 12:16:22 INFO:	Running 1 job(s) on miniprot_index, starting at 08/26/2024 12:16:22
+2024-08-26 12:16:42 INFO:	[miniprot_index]	1 of 1 task(s) completed
+2024-08-26 12:16:42 INFO:	Running 1 job(s) on miniprot_align, starting at 08/26/2024 12:16:42
+2024-08-26 12:16:43 INFO:	[miniprot_align]	1 of 1 task(s) completed
+2024-08-26 12:16:43 CRITICAL:	Unhandled exception occurred:
+Traceback (most recent call last):
+  File "/home/tmathieu/.conda/envs/enad/lib/python3.8/site-packages/busco/BuscoRunner.py", line 120, in run
+    self.get_lineage()
+  File "/home/tmathieu/.conda/envs/enad/lib/python3.8/site-packages/busco/BuscoRunner.py", line 65, in get_lineage
+    ) = self.auto_select_lineage()  # full path
+  File "/home/tmathieu/.conda/envs/enad/lib/python3.8/site-packages/busco/BuscoLogger.py", line 62, in wrapped_func
+    self.retval = func(*args, **kwargs)
+  File "/home/tmathieu/.conda/envs/enad/lib/python3.8/site-packages/busco/BuscoRunner.py", line 86, in auto_select_lineage
+    asl.run_auto_selector()
+  File "/home/tmathieu/.conda/envs/enad/lib/python3.8/site-packages/busco/BuscoLogger.py", line 62, in wrapped_func
+    self.retval = func(*args, **kwargs)
+  File "/home/tmathieu/.conda/envs/enad/lib/python3.8/site-packages/busco/AutoLineage.py", line 109, in run_auto_selector
+    root_runners = self.run_lineages_list(self.all_lineages)
+  File "/home/tmathieu/.conda/envs/enad/lib/python3.8/site-packages/busco/AutoLineage.py", line 156, in run_lineages_list
+    busco_run.run_analysis(callback=self.callback)
+  File "/home/tmathieu/.conda/envs/enad/lib/python3.8/site-packages/busco/BuscoRunner.py", line 564, in run_analysis
+    self.analysis.run_analysis()
+  File "/home/tmathieu/.conda/envs/enad/lib/python3.8/site-packages/busco/analysis/GenomeAnalysis.py", line 1043, in run_analysis
+    self.run_miniprot(incomplete_buscos)
+  File "/home/tmathieu/.conda/envs/enad/lib/python3.8/site-packages/busco/analysis/GenomeAnalysis.py", line 1071, in run_miniprot
+    self.miniprot_align_runner.parse_output()
+  File "/home/tmathieu/.conda/envs/enad/lib/python3.8/site-packages/busco/busco_tools/miniprot.py", line 370, in parse_output
+    target_id,
+UnboundLocalError: local variable 'target_id' referenced before assignment
+
+
+2024-08-26 12:16:43 ERROR:	local variable 'target_id' referenced before assignment
+2024-08-26 12:16:43 ERROR:	BUSCO analysis failed!
+2024-08-26 12:16:43 ERROR:	Check the logs, read the user guide (https://busco.ezlab.org/busco_userguide.html), and check the BUSCO issue board on https://gitlab.com/ezlab/busco/issues
+
+slurmstepd: error: Detected 1 oom_kill event in StepId=15175895.batch. Some of the step tasks have been OOM Killed.
+
+############### Job 15175895 summary ###############
+Name                : runInitialBUSCO.sh
+User                : tmathieu
+Account             : datalabgrp
+Partition           : high2
+Nodes               : cpu-3-54
+Cores               : 16
+GPUs                : 0
+State               : OUT_OF_MEMORY
+ExitCode            : 0:125
+Submit              : 2024-08-26T12:14:38
+Start               : 2024-08-26T12:14:39
+End                 : 2024-08-26T12:16:49
+Reserved walltime   : 3-00:00:00
+Used walltime       :   00:02:10
+Used CPU time       :   00:04:12
+% User (Computation): 82.24%
+% System (I/O)      : 17.76%
+Mem reserved        : 16G
+Max Mem used        : 14.67G (cpu-3-54)
+Max Disk Write      : 153.60K (cpu-3-54)
+Max Disk Read       : 16.61G (cpu-3-54)

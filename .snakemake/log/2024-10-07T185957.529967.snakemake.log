@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule initial_assembly in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 43:
+Missing input files for rule initial_assembly:
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56_horse_05/horse_04_56_horse_05.asm.bp.p_ctg.gfa
+    wildcards: sample=horse_04_56_horse_05
+    affected files:
+        /home/tmathieu/eNAD/fastq/horse_04_56_horse_05.fastq

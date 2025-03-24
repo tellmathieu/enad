@@ -1,0 +1,446 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                    count
+-------------------  -------
+BUSCOanalysis             12
+alignToFirstControl       10
+all                        1
+buscoRscript               1
+changeNCtoChr             12
+combineBUSCO               1
+compareSVs                 1
+convertSamToBam           10
+correct                   12
+findSVs                   10
+indexBam                  10
+parseBUSCO                12
+removeRagTag              12
+sameChrNames              12
+scaffold                  12
+sortBam                   10
+total                    138
+
+Select jobs to execute...
+
+[Fri Nov 22 09:34:30 2024]
+rule BUSCOanalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap2.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/run_laurasiatheria_odb10/full_table.tsv
+    jobid: 17
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/run_laurasiatheria_odb10/full_table.tsv; Updated input files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap2.p_ctg.fa
+    wildcards: sample=horse_03_238, phases=hap2
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    busco -c 20 --metaeuk       --metaeuk_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       --metaeuk_rerun_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap2.p_ctg.fa       -o horse_03_238.hap2       -m genome       -f       -l laurasiatheria_odb10
+  
+[Fri Nov 22 17:33:18 2024]
+Finished job 17.
+1 of 138 steps (1%) done
+Select jobs to execute...
+
+[Fri Nov 22 17:33:18 2024]
+rule BUSCOanalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.hap2.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/short_summary.specific.laurasiatheria_odb10.horse_01_200.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/run_laurasiatheria_odb10/full_table.tsv
+    jobid: 29
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/short_summary.specific.laurasiatheria_odb10.horse_01_200.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/run_laurasiatheria_odb10/full_table.tsv; Updated input files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.hap2.p_ctg.fa
+    wildcards: sample=horse_01_200, phases=hap2
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    busco -c 20 --metaeuk       --metaeuk_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       --metaeuk_rerun_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.hap2.p_ctg.fa       -o horse_01_200.hap2       -m genome       -f       -l laurasiatheria_odb10
+  
+
+[Fri Nov 22 17:33:18 2024]
+rule parseBUSCO:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/run_laurasiatheria_odb10/full_table.tsv
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/busco.csv
+    jobid: 16
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/busco.csv; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/run_laurasiatheria_odb10/full_table.tsv
+    wildcards: sample=horse_03_238, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    echo "Strain,Complete_single_copy,Complete_duplicated,Fragmented,Missing" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/busco.csv
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap2.txt | grep "(S)" | awk -v strain="horse_03_238" '{print strain","$1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/complete_single.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap2.txt | grep "(D)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/complete_duplicated.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap2.txt | grep "(F)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/fragmented.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap2.txt | grep "(M)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/missing.txt
+
+    paste -d "," /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/missing.txt >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/busco.csv
+
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap2/missing.txt
+  
+[Fri Nov 22 17:33:18 2024]
+Finished job 16.
+2 of 138 steps (1%) done
+Select jobs to execute...
+[Sat Nov 23 01:02:34 2024]
+Finished job 29.
+3 of 138 steps (2%) done
+
+[Sat Nov 23 01:02:34 2024]
+rule parseBUSCO:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/short_summary.specific.laurasiatheria_odb10.horse_01_200.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/run_laurasiatheria_odb10/full_table.tsv
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/busco.csv
+    jobid: 28
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/busco.csv; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/short_summary.specific.laurasiatheria_odb10.horse_01_200.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/run_laurasiatheria_odb10/full_table.tsv
+    wildcards: sample=horse_01_200, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    echo "Strain,Complete_single_copy,Complete_duplicated,Fragmented,Missing" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/busco.csv
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/short_summary.specific.laurasiatheria_odb10.horse_01_200.hap2.txt | grep "(S)" | awk -v strain="horse_01_200" '{print strain","$1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/complete_single.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/short_summary.specific.laurasiatheria_odb10.horse_01_200.hap2.txt | grep "(D)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/complete_duplicated.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/short_summary.specific.laurasiatheria_odb10.horse_01_200.hap2.txt | grep "(F)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/fragmented.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/short_summary.specific.laurasiatheria_odb10.horse_01_200.hap2.txt | grep "(M)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/missing.txt
+
+    paste -d "," /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/missing.txt >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/busco.csv
+
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap2/missing.txt
+  
+
+[Sat Nov 23 01:02:34 2024]
+rule BUSCOanalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap2.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/run_laurasiatheria_odb10/full_table.tsv
+    jobid: 47
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/run_laurasiatheria_odb10/full_table.tsv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap2.txt; Updated input files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap2.p_ctg.fa
+    wildcards: sample=horse_02_205, phases=hap2
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    busco -c 20 --metaeuk       --metaeuk_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       --metaeuk_rerun_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap2.p_ctg.fa       -o horse_02_205.hap2       -m genome       -f       -l laurasiatheria_odb10
+  
+[Sat Nov 23 01:02:35 2024]
+Finished job 28.
+4 of 138 steps (3%) done
+Select jobs to execute...
+[Sat Nov 23 07:47:32 2024]
+Finished job 47.
+5 of 138 steps (4%) done
+
+[Sat Nov 23 07:47:32 2024]
+rule parseBUSCO:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/run_laurasiatheria_odb10/full_table.tsv
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/busco.csv
+    jobid: 46
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/busco.csv; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/run_laurasiatheria_odb10/full_table.tsv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap2.txt
+    wildcards: sample=horse_02_205, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    echo "Strain,Complete_single_copy,Complete_duplicated,Fragmented,Missing" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/busco.csv
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap2.txt | grep "(S)" | awk -v strain="horse_02_205" '{print strain","$1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/complete_single.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap2.txt | grep "(D)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/complete_duplicated.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap2.txt | grep "(F)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/fragmented.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap2.txt | grep "(M)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/missing.txt
+
+    paste -d "," /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/missing.txt >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/busco.csv
+
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap2/missing.txt
+  
+
+[Sat Nov 23 07:47:32 2024]
+rule BUSCOanalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap2.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/run_laurasiatheria_odb10/full_table.tsv
+    jobid: 35
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/run_laurasiatheria_odb10/full_table.tsv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap2.txt; Updated input files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap2.p_ctg.fa
+    wildcards: sample=horse_06_1212, phases=hap2
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    busco -c 20 --metaeuk       --metaeuk_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       --metaeuk_rerun_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap2.p_ctg.fa       -o horse_06_1212.hap2       -m genome       -f       -l laurasiatheria_odb10
+  
+[Sat Nov 23 07:47:32 2024]
+Finished job 46.
+6 of 138 steps (4%) done
+Select jobs to execute...
+[Sat Nov 23 15:53:46 2024]
+Finished job 35.
+7 of 138 steps (5%) done
+
+[Sat Nov 23 15:53:46 2024]
+rule parseBUSCO:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/run_laurasiatheria_odb10/full_table.tsv
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/busco.csv
+    jobid: 34
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/busco.csv; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/run_laurasiatheria_odb10/full_table.tsv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap2.txt
+    wildcards: sample=horse_06_1212, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    echo "Strain,Complete_single_copy,Complete_duplicated,Fragmented,Missing" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/busco.csv
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap2.txt | grep "(S)" | awk -v strain="horse_06_1212" '{print strain","$1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/complete_single.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap2.txt | grep "(D)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/complete_duplicated.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap2.txt | grep "(F)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/fragmented.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap2.txt | grep "(M)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/missing.txt
+
+    paste -d "," /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/missing.txt >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/busco.csv
+
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap2/missing.txt
+  
+
+[Sat Nov 23 15:53:46 2024]
+rule BUSCOanalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.hap2.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/short_summary.specific.laurasiatheria_odb10.horse_05_608.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/run_laurasiatheria_odb10/full_table.tsv
+    jobid: 41
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/run_laurasiatheria_odb10/full_table.tsv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/short_summary.specific.laurasiatheria_odb10.horse_05_608.hap2.txt; Updated input files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.hap2.p_ctg.fa
+    wildcards: sample=horse_05_608, phases=hap2
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    busco -c 20 --metaeuk       --metaeuk_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       --metaeuk_rerun_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.hap2.p_ctg.fa       -o horse_05_608.hap2       -m genome       -f       -l laurasiatheria_odb10
+  
+[Sat Nov 23 15:53:46 2024]
+Finished job 34.
+8 of 138 steps (6%) done
+Select jobs to execute...
+[Sat Nov 23 23:02:25 2024]
+Finished job 41.
+9 of 138 steps (7%) done
+
+[Sat Nov 23 23:02:25 2024]
+rule BUSCOanalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56/horse_04_56.asm.bp.hap1.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/short_summary.specific.laurasiatheria_odb10.horse_04_56.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/run_laurasiatheria_odb10/full_table.tsv
+    jobid: 20
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/short_summary.specific.laurasiatheria_odb10.horse_04_56.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/run_laurasiatheria_odb10/full_table.tsv; Updated input files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56/horse_04_56.asm.bp.hap1.p_ctg.fa
+    wildcards: sample=horse_04_56, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    busco -c 20 --metaeuk       --metaeuk_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       --metaeuk_rerun_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56/horse_04_56.asm.bp.hap1.p_ctg.fa       -o horse_04_56.hap1       -m genome       -f       -l laurasiatheria_odb10
+  
+
+[Sat Nov 23 23:02:25 2024]
+rule parseBUSCO:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/short_summary.specific.laurasiatheria_odb10.horse_05_608.hap2.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/run_laurasiatheria_odb10/full_table.tsv
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/busco.csv
+    jobid: 40
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/busco.csv; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/run_laurasiatheria_odb10/full_table.tsv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/short_summary.specific.laurasiatheria_odb10.horse_05_608.hap2.txt
+    wildcards: sample=horse_05_608, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    echo "Strain,Complete_single_copy,Complete_duplicated,Fragmented,Missing" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/busco.csv
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/short_summary.specific.laurasiatheria_odb10.horse_05_608.hap2.txt | grep "(S)" | awk -v strain="horse_05_608" '{print strain","$1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/complete_single.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/short_summary.specific.laurasiatheria_odb10.horse_05_608.hap2.txt | grep "(D)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/complete_duplicated.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/short_summary.specific.laurasiatheria_odb10.horse_05_608.hap2.txt | grep "(F)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/fragmented.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/short_summary.specific.laurasiatheria_odb10.horse_05_608.hap2.txt | grep "(M)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/missing.txt
+
+    paste -d "," /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/missing.txt >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/busco.csv
+
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/missing.txt
+  
+[Sat Nov 23 23:02:25 2024]
+Finished job 40.
+10 of 138 steps (7%) done
+Select jobs to execute...
+[Sun Nov 24 06:17:04 2024]
+Finished job 20.
+11 of 138 steps (8%) done
+
+[Sun Nov 24 06:17:04 2024]
+rule BUSCOanalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap1.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/run_laurasiatheria_odb10/full_table.tsv
+    jobid: 32
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/run_laurasiatheria_odb10/full_table.tsv; Updated input files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap1.p_ctg.fa
+    wildcards: sample=horse_06_1212, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    busco -c 20 --metaeuk       --metaeuk_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       --metaeuk_rerun_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap1.p_ctg.fa       -o horse_06_1212.hap1       -m genome       -f       -l laurasiatheria_odb10
+  
+
+[Sun Nov 24 06:17:04 2024]
+rule parseBUSCO:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/short_summary.specific.laurasiatheria_odb10.horse_04_56.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/run_laurasiatheria_odb10/full_table.tsv
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/busco.csv
+    jobid: 19
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/busco.csv; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/short_summary.specific.laurasiatheria_odb10.horse_04_56.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/run_laurasiatheria_odb10/full_table.tsv
+    wildcards: sample=horse_04_56, phases=hap1
+    resources: tmpdir=/tmp
+
+
+    echo "Strain,Complete_single_copy,Complete_duplicated,Fragmented,Missing" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/busco.csv
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/short_summary.specific.laurasiatheria_odb10.horse_04_56.hap1.txt | grep "(S)" | awk -v strain="horse_04_56" '{print strain","$1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/complete_single.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/short_summary.specific.laurasiatheria_odb10.horse_04_56.hap1.txt | grep "(D)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/complete_duplicated.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/short_summary.specific.laurasiatheria_odb10.horse_04_56.hap1.txt | grep "(F)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/fragmented.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/short_summary.specific.laurasiatheria_odb10.horse_04_56.hap1.txt | grep "(M)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/missing.txt
+
+    paste -d "," /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/missing.txt >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/busco.csv
+
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56.hap1/missing.txt
+  
+[Sun Nov 24 06:17:04 2024]
+Finished job 19.
+12 of 138 steps (9%) done
+Select jobs to execute...
+[Sun Nov 24 13:42:30 2024]
+Finished job 32.
+13 of 138 steps (9%) done
+
+[Sun Nov 24 13:42:30 2024]
+rule BUSCOanalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap1.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/run_laurasiatheria_odb10/full_table.tsv
+    jobid: 44
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/run_laurasiatheria_odb10/full_table.tsv; Updated input files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap1.p_ctg.fa
+    wildcards: sample=horse_02_205, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    busco -c 20 --metaeuk       --metaeuk_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       --metaeuk_rerun_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap1.p_ctg.fa       -o horse_02_205.hap1       -m genome       -f       -l laurasiatheria_odb10
+  
+
+[Sun Nov 24 13:42:30 2024]
+rule parseBUSCO:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/run_laurasiatheria_odb10/full_table.tsv
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/busco.csv
+    jobid: 31
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/busco.csv; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/run_laurasiatheria_odb10/full_table.tsv
+    wildcards: sample=horse_06_1212, phases=hap1
+    resources: tmpdir=/tmp
+
+
+    echo "Strain,Complete_single_copy,Complete_duplicated,Fragmented,Missing" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/busco.csv
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap1.txt | grep "(S)" | awk -v strain="horse_06_1212" '{print strain","$1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/complete_single.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap1.txt | grep "(D)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/complete_duplicated.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap1.txt | grep "(F)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/fragmented.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/short_summary.specific.laurasiatheria_odb10.horse_06_1212.hap1.txt | grep "(M)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/missing.txt
+
+    paste -d "," /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/missing.txt >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/busco.csv
+
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212.hap1/missing.txt
+  
+[Sun Nov 24 13:42:30 2024]
+Finished job 31.
+14 of 138 steps (10%) done
+Select jobs to execute...
+[Sun Nov 24 20:31:54 2024]
+Finished job 44.
+15 of 138 steps (11%) done
+
+[Sun Nov 24 20:31:54 2024]
+rule BUSCOanalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap1.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/run_laurasiatheria_odb10/full_table.tsv
+    jobid: 14
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/run_laurasiatheria_odb10/full_table.tsv; Updated input files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap1.p_ctg.fa
+    wildcards: sample=horse_03_238, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    busco -c 20 --metaeuk       --metaeuk_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       --metaeuk_rerun_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap1.p_ctg.fa       -o horse_03_238.hap1       -m genome       -f       -l laurasiatheria_odb10
+  
+
+[Sun Nov 24 20:31:54 2024]
+rule parseBUSCO:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/run_laurasiatheria_odb10/full_table.tsv
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/busco.csv
+    jobid: 43
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/busco.csv; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/run_laurasiatheria_odb10/full_table.tsv
+    wildcards: sample=horse_02_205, phases=hap1
+    resources: tmpdir=/tmp
+
+
+    echo "Strain,Complete_single_copy,Complete_duplicated,Fragmented,Missing" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/busco.csv
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap1.txt | grep "(S)" | awk -v strain="horse_02_205" '{print strain","$1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/complete_single.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap1.txt | grep "(D)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/complete_duplicated.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap1.txt | grep "(F)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/fragmented.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/short_summary.specific.laurasiatheria_odb10.horse_02_205.hap1.txt | grep "(M)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/missing.txt
+
+    paste -d "," /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/missing.txt >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/busco.csv
+
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205.hap1/missing.txt
+  
+[Sun Nov 24 20:31:55 2024]
+Finished job 43.
+16 of 138 steps (12%) done
+Select jobs to execute...
+[Mon Nov 25 03:41:34 2024]
+Finished job 14.
+17 of 138 steps (12%) done
+
+[Mon Nov 25 03:41:34 2024]
+rule BUSCOanalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.hap1.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap1/short_summary.specific.laurasiatheria_odb10.horse_01_200.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap1/run_laurasiatheria_odb10/full_table.tsv
+    jobid: 26
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap1/run_laurasiatheria_odb10/full_table.tsv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200.hap1/short_summary.specific.laurasiatheria_odb10.horse_01_200.hap1.txt; Updated input files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.hap1.p_ctg.fa
+    wildcards: sample=horse_01_200, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    busco -c 20 --metaeuk       --metaeuk_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       --metaeuk_rerun_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.hap1.p_ctg.fa       -o horse_01_200.hap1       -m genome       -f       -l laurasiatheria_odb10
+  
+
+[Mon Nov 25 03:41:34 2024]
+rule parseBUSCO:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/run_laurasiatheria_odb10/full_table.tsv
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/busco.csv
+    jobid: 13
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/busco.csv; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/run_laurasiatheria_odb10/full_table.tsv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap1.txt
+    wildcards: sample=horse_03_238, phases=hap1
+    resources: tmpdir=/tmp
+
+
+    echo "Strain,Complete_single_copy,Complete_duplicated,Fragmented,Missing" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/busco.csv
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap1.txt | grep "(S)" | awk -v strain="horse_03_238" '{print strain","$1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/complete_single.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap1.txt | grep "(D)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/complete_duplicated.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap1.txt | grep "(F)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/fragmented.txt
+
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/short_summary.specific.laurasiatheria_odb10.horse_03_238.hap1.txt | grep "(M)" | awk '{print $1}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/missing.txt
+
+    paste -d "," /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/missing.txt >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/busco.csv
+
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/complete_single.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/complete_duplicated.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/fragmented.txt /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238.hap1/missing.txt
+  
+[Mon Nov 25 03:41:34 2024]
+Finished job 13.
+18 of 138 steps (13%) done
+Select jobs to execute...

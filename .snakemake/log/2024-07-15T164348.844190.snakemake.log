@@ -1,0 +1,158 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                 count
+----------------  -------
+all                     1
+initial_assembly        5
+total                   6
+
+Select jobs to execute...
+Execute 5 jobs...
+
+[Mon Jul 15 16:43:49 2024]
+localrule initial_assembly:
+    input: /home/tmathieu/eNAD/fastq/horse_03_238.fastq, /home/tmathieu/eNAD/fastq/horse_01_200.fastq, /home/tmathieu/eNAD/fastq/horse_06_1212.fastq, /home/tmathieu/eNAD/fastq/horse_05_608.fastq, /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200.asm
+    jobid: 2
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200.asm
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp
+
+
+		mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes
+
+		hifiasm -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200.asm -t 10 /home/tmathieu/eNAD/fastq/horse_03_238.fastq /home/tmathieu/eNAD/fastq/horse_01_200.fastq /home/tmathieu/eNAD/fastq/horse_06_1212.fastq /home/tmathieu/eNAD/fastq/horse_05_608.fastq /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+	
+
+[Mon Jul 15 16:43:49 2024]
+localrule initial_assembly:
+    input: /home/tmathieu/eNAD/fastq/horse_03_238.fastq, /home/tmathieu/eNAD/fastq/horse_01_200.fastq, /home/tmathieu/eNAD/fastq/horse_06_1212.fastq, /home/tmathieu/eNAD/fastq/horse_05_608.fastq, /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205.asm
+    jobid: 5
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205.asm
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp
+
+
+		mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes
+
+		hifiasm -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205.asm -t 10 /home/tmathieu/eNAD/fastq/horse_03_238.fastq /home/tmathieu/eNAD/fastq/horse_01_200.fastq /home/tmathieu/eNAD/fastq/horse_06_1212.fastq /home/tmathieu/eNAD/fastq/horse_05_608.fastq /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+	
+
+[Mon Jul 15 16:43:49 2024]
+localrule initial_assembly:
+    input: /home/tmathieu/eNAD/fastq/horse_03_238.fastq, /home/tmathieu/eNAD/fastq/horse_01_200.fastq, /home/tmathieu/eNAD/fastq/horse_06_1212.fastq, /home/tmathieu/eNAD/fastq/horse_05_608.fastq, /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212.asm
+    jobid: 3
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212.asm
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp
+
+
+		mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes
+
+		hifiasm -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212.asm -t 10 /home/tmathieu/eNAD/fastq/horse_03_238.fastq /home/tmathieu/eNAD/fastq/horse_01_200.fastq /home/tmathieu/eNAD/fastq/horse_06_1212.fastq /home/tmathieu/eNAD/fastq/horse_05_608.fastq /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+	
+
+[Mon Jul 15 16:43:49 2024]
+localrule initial_assembly:
+    input: /home/tmathieu/eNAD/fastq/horse_03_238.fastq, /home/tmathieu/eNAD/fastq/horse_01_200.fastq, /home/tmathieu/eNAD/fastq/horse_06_1212.fastq, /home/tmathieu/eNAD/fastq/horse_05_608.fastq, /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238.asm
+    jobid: 1
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238.asm
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp
+
+
+		mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes
+
+		hifiasm -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238.asm -t 10 /home/tmathieu/eNAD/fastq/horse_03_238.fastq /home/tmathieu/eNAD/fastq/horse_01_200.fastq /home/tmathieu/eNAD/fastq/horse_06_1212.fastq /home/tmathieu/eNAD/fastq/horse_05_608.fastq /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+	
+
+[Mon Jul 15 16:43:49 2024]
+localrule initial_assembly:
+    input: /home/tmathieu/eNAD/fastq/horse_03_238.fastq, /home/tmathieu/eNAD/fastq/horse_01_200.fastq, /home/tmathieu/eNAD/fastq/horse_06_1212.fastq, /home/tmathieu/eNAD/fastq/horse_05_608.fastq, /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608.asm
+    jobid: 4
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608.asm
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+		mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes
+
+		hifiasm -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608.asm -t 10 /home/tmathieu/eNAD/fastq/horse_03_238.fastq /home/tmathieu/eNAD/fastq/horse_01_200.fastq /home/tmathieu/eNAD/fastq/horse_06_1212.fastq /home/tmathieu/eNAD/fastq/horse_05_608.fastq /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+	
+[Mon Jul 15 16:43:50 2024]
+Error in rule initial_assembly:
+    jobid: 3
+    input: /home/tmathieu/eNAD/fastq/horse_03_238.fastq, /home/tmathieu/eNAD/fastq/horse_01_200.fastq, /home/tmathieu/eNAD/fastq/horse_06_1212.fastq, /home/tmathieu/eNAD/fastq/horse_05_608.fastq, /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212.asm
+    shell:
+        
+		mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes
+
+		hifiasm -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212.asm -t 10 /home/tmathieu/eNAD/fastq/horse_03_238.fastq /home/tmathieu/eNAD/fastq/horse_01_200.fastq /home/tmathieu/eNAD/fastq/horse_06_1212.fastq /home/tmathieu/eNAD/fastq/horse_05_608.fastq /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+	
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Jul 15 16:43:51 2024]
+Error in rule initial_assembly:
+    jobid: 2
+    input: /home/tmathieu/eNAD/fastq/horse_03_238.fastq, /home/tmathieu/eNAD/fastq/horse_01_200.fastq, /home/tmathieu/eNAD/fastq/horse_06_1212.fastq, /home/tmathieu/eNAD/fastq/horse_05_608.fastq, /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200.asm
+    shell:
+        
+		mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes
+
+		hifiasm -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200.asm -t 10 /home/tmathieu/eNAD/fastq/horse_03_238.fastq /home/tmathieu/eNAD/fastq/horse_01_200.fastq /home/tmathieu/eNAD/fastq/horse_06_1212.fastq /home/tmathieu/eNAD/fastq/horse_05_608.fastq /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+	
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Jul 15 16:43:51 2024]
+Error in rule initial_assembly:
+    jobid: 4
+    input: /home/tmathieu/eNAD/fastq/horse_03_238.fastq, /home/tmathieu/eNAD/fastq/horse_01_200.fastq, /home/tmathieu/eNAD/fastq/horse_06_1212.fastq, /home/tmathieu/eNAD/fastq/horse_05_608.fastq, /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608.asm
+    shell:
+        
+		mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes
+
+		hifiasm -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608.asm -t 10 /home/tmathieu/eNAD/fastq/horse_03_238.fastq /home/tmathieu/eNAD/fastq/horse_01_200.fastq /home/tmathieu/eNAD/fastq/horse_06_1212.fastq /home/tmathieu/eNAD/fastq/horse_05_608.fastq /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+	
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Jul 15 16:43:53 2024]
+Error in rule initial_assembly:
+    jobid: 5
+    input: /home/tmathieu/eNAD/fastq/horse_03_238.fastq, /home/tmathieu/eNAD/fastq/horse_01_200.fastq, /home/tmathieu/eNAD/fastq/horse_06_1212.fastq, /home/tmathieu/eNAD/fastq/horse_05_608.fastq, /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205.asm
+    shell:
+        
+		mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes
+
+		hifiasm -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205.asm -t 10 /home/tmathieu/eNAD/fastq/horse_03_238.fastq /home/tmathieu/eNAD/fastq/horse_01_200.fastq /home/tmathieu/eNAD/fastq/horse_06_1212.fastq /home/tmathieu/eNAD/fastq/horse_05_608.fastq /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+	
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Jul 15 16:43:56 2024]
+Error in rule initial_assembly:
+    jobid: 1
+    input: /home/tmathieu/eNAD/fastq/horse_03_238.fastq, /home/tmathieu/eNAD/fastq/horse_01_200.fastq, /home/tmathieu/eNAD/fastq/horse_06_1212.fastq, /home/tmathieu/eNAD/fastq/horse_05_608.fastq, /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238.asm
+    shell:
+        
+		mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes
+
+		hifiasm -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238.asm -t 10 /home/tmathieu/eNAD/fastq/horse_03_238.fastq /home/tmathieu/eNAD/fastq/horse_01_200.fastq /home/tmathieu/eNAD/fastq/horse_06_1212.fastq /home/tmathieu/eNAD/fastq/horse_05_608.fastq /home/tmathieu/eNAD/fastq/horse_02_205.fastq
+	
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-07-15T164348.844190.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

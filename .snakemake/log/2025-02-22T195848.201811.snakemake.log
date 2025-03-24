@@ -1,0 +1,35 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                           count
+--------------------------  -------
+alignToFirstControlPrimary        6
+all                               1
+compareSVsPrimary                 1
+convertSamToBamPrimary            6
+coverageStats                     6
+coverageStatsAgg                  1
+findSVsPrimary                    5
+indexBamPrimary                   5
+sortBamPrimary                    6
+total                            37
+
+Select jobs to execute...
+
+[Sat Feb 22 19:59:11 2025]
+rule alignToFirstControlPrimary:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa, /home/tmathieu/eNAD/fastq/horse_01_200.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary_compto5.sam
+    jobid: 184
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary_compto5.sam; Set of input files has changed since last execution
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary
+
+    minimap2       -a       -x map-hifi       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa       /home/tmathieu/eNAD/fastq/horse_01_200.fastq       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary_compto5.sam
+  

@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule changeNCtoChrPrimary in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased.smk, line 417:
+Missing input files for rule changeNCtoChrPrimary:
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr_only.fa
+    wildcards: sample=horse_05_608
+    affected files:
+        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr.fa

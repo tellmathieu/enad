@@ -1,0 +1,232 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                    count
+-------------------  -------
+alignToFirstControl        2
+all                        1
+compareSVs                 1
+convertSamToBam            2
+findSVs                    2
+indexBam                   2
+plotSVs                    1
+sortBam                    2
+total                     13
+
+Select jobs to execute...
+
+[Mon Dec  2 14:56:09 2024]
+rule alignToFirstControl:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/horse_05_608.hap1_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/horse_05_608.hap2_scaffold_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.sam
+    jobid: 58
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.sam
+    wildcards: comp_sample=horse_05_608, phases=hap2
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles
+
+    minimap2       -a       -x map-hifi       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/horse_05_608.hap1_scaffold_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap2/horse_05_608.hap2_scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.sam
+  
+[Mon Dec  2 15:01:15 2024]
+Finished job 58.
+1 of 13 steps (8%) done
+Select jobs to execute...
+
+[Mon Dec  2 15:01:16 2024]
+rule convertSamToBam:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.bam
+    jobid: 57
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.bam; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.sam
+    wildcards: comp_sample=horse_05_608, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    samtools view -S -b /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.sam > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.bam
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.sam
+  
+
+[Mon Dec  2 15:01:16 2024]
+rule alignToFirstControl:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/horse_05_608.hap1_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/horse_05_608.hap1_scaffold_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.sam
+    jobid: 6
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.sam
+    wildcards: comp_sample=horse_05_608, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles
+
+    minimap2       -a       -x map-hifi       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/horse_05_608.hap1_scaffold_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/horse_05_608.hap1_scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.sam
+  
+[Mon Dec  2 15:02:09 2024]
+Finished job 57.
+2 of 13 steps (15%) done
+Select jobs to execute...
+
+[Mon Dec  2 15:02:09 2024]
+rule sortBam:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.bam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp_sorted.bam
+    jobid: 56
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp_sorted.bam; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.bam
+    wildcards: comp_sample=horse_05_608, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    samtools sort -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp_sorted.bam /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.bam
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp.bam
+  
+[Mon Dec  2 15:03:28 2024]
+Finished job 56.
+3 of 13 steps (23%) done
+Select jobs to execute...
+
+[Mon Dec  2 15:03:28 2024]
+rule indexBam:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp_sorted.bam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp_sorted.bam.bai
+    jobid: 64
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp_sorted.bam.bai; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp_sorted.bam
+    wildcards: comp_sample=horse_05_608, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    samtools index -b /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp_sorted.bam
+  
+[Mon Dec  2 15:03:38 2024]
+Finished job 64.
+4 of 13 steps (31%) done
+Select jobs to execute...
+[Mon Dec  2 15:06:15 2024]
+Finished job 6.
+5 of 13 steps (38%) done
+
+[Mon Dec  2 15:06:16 2024]
+rule convertSamToBam:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.bam
+    jobid: 5
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.bam; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.sam
+    wildcards: comp_sample=horse_05_608, phases=hap1
+    resources: tmpdir=/tmp
+
+
+    samtools view -S -b /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.sam > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.bam
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.sam
+  
+
+[Mon Dec  2 15:06:16 2024]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2.snf
+    jobid: 55
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2.snf; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp_sorted.bam.bai, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp_sorted.bam
+    wildcards: comp_sample=horse_05_608, phases=hap2
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2_comp_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2.snf
+  
+[Mon Dec  2 15:06:39 2024]
+Finished job 55.
+6 of 13 steps (46%) done
+[Mon Dec  2 15:06:50 2024]
+Finished job 5.
+7 of 13 steps (54%) done
+Select jobs to execute...
+
+[Mon Dec  2 15:06:50 2024]
+rule sortBam:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.bam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp_sorted.bam
+    jobid: 4
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp_sorted.bam; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.bam
+    wildcards: comp_sample=horse_05_608, phases=hap1
+    resources: tmpdir=/tmp
+
+
+    samtools sort -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp_sorted.bam /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.bam
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp.bam
+  
+[Mon Dec  2 15:07:42 2024]
+Finished job 4.
+8 of 13 steps (62%) done
+Select jobs to execute...
+
+[Mon Dec  2 15:07:42 2024]
+rule indexBam:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp_sorted.bam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp_sorted.bam.bai
+    jobid: 54
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp_sorted.bam.bai; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp_sorted.bam
+    wildcards: comp_sample=horse_05_608, phases=hap1
+    resources: tmpdir=/tmp
+
+
+    samtools index -b /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp_sorted.bam
+  
+[Mon Dec  2 15:07:48 2024]
+Finished job 54.
+9 of 13 steps (69%) done
+Select jobs to execute...
+
+[Mon Dec  2 15:07:48 2024]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1.snf
+    jobid: 3
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1.snf; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp_sorted.bam.bai
+    wildcards: comp_sample=horse_05_608, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1_comp_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1.snf
+  
+[Mon Dec  2 15:08:02 2024]
+Finished job 3.
+10 of 13 steps (77%) done
+Select jobs to execute...
+
+[Mon Dec  2 15:08:02 2024]
+rule compareSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_04_56.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_04_56.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_06_1212.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_06_1212.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_03_238.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_03_238.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_01_200.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_01_200.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_02_205.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_02_205.hap2.snf
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1.vcf
+    jobid: 2
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1.vcf; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2.snf
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap1.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_05_608.hap2.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_04_56.hap1.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_04_56.hap2.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_06_1212.hap1.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_06_1212.hap2.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_03_238.hap1.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_03_238.hap2.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_01_200.hap1.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_01_200.hap2.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_02_205.hap1.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_horse_02_205.hap2.snf       --vcf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1.vcf
+  
+[Mon Dec  2 15:08:20 2024]
+Finished job 2.
+11 of 13 steps (85%) done
+Select jobs to execute...
+
+[Mon Dec  2 15:08:20 2024]
+rule plotSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1.vcf
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/heatmap.jpg, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/sample_upset.jpg, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/sv_site_per_genome.jpg, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/variant_count.jpg
+    jobid: 1
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/sample_upset.jpg; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1.vcf
+    resources: tmpdir=/tmp
+
+
+    python3 -m sniffles2_plot -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1.vcf -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot
+  
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule plotSVs in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased.smk, line 550:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/sample_upset.jpg
+Removing output files of failed job plotSVs since they might be corrupted:
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/heatmap.jpg, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/sv_site_per_genome.jpg, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/variant_count.jpg
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-12-02T145418.279816.snakemake.log

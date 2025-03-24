@@ -1,0 +1,246 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job           count
+----------  -------
+all               1
+compareSVs        1
+findSVs          12
+total            14
+
+Select jobs to execute...
+
+[Fri Feb 14 15:00:17 2025]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap2_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap2_compto5_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap2.snf
+    jobid: 60
+    reason: Set of input files has changed since last execution
+    wildcards: comp_sample=horse_05_608, phases=hap2
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap2_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap2.snf
+  
+[Fri Feb 14 15:00:36 2025]
+Finished job 60.
+1 of 14 steps (7%) done
+Select jobs to execute...
+
+[Fri Feb 14 15:00:36 2025]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap2_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap2_compto5_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap2.snf
+    jobid: 120
+    reason: Set of input files has changed since last execution
+    wildcards: comp_sample=horse_03_238, phases=hap2
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap2_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap2.snf
+  
+[Fri Feb 14 15:00:56 2025]
+Finished job 120.
+2 of 14 steps (14%) done
+Select jobs to execute...
+
+[Fri Feb 14 15:00:56 2025]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap1_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap1_compto5_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap1.snf
+    jobid: 90
+    reason: Set of input files has changed since last execution
+    wildcards: comp_sample=horse_06_1212, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap1_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap1.snf
+  
+[Fri Feb 14 15:01:16 2025]
+Finished job 90.
+3 of 14 steps (21%) done
+Select jobs to execute...
+
+[Fri Feb 14 15:01:16 2025]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap1_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap1_compto5_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap1.snf
+    jobid: 150
+    reason: Set of input files has changed since last execution
+    wildcards: comp_sample=horse_02_205, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap1_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap1.snf
+  
+[Fri Feb 14 15:01:36 2025]
+Finished job 150.
+4 of 14 steps (29%) done
+Select jobs to execute...
+
+[Fri Feb 14 15:01:36 2025]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap1_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap1_compto5_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap1.snf
+    jobid: 110
+    reason: Set of input files has changed since last execution
+    wildcards: comp_sample=horse_03_238, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap1_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap1.snf
+  
+[Fri Feb 14 15:01:55 2025]
+Finished job 110.
+5 of 14 steps (36%) done
+Select jobs to execute...
+
+[Fri Feb 14 15:01:56 2025]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap2_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap2_compto5_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap2.snf
+    jobid: 140
+    reason: Set of input files has changed since last execution
+    wildcards: comp_sample=horse_01_200, phases=hap2
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap2_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap2.snf
+  
+[Fri Feb 14 15:02:22 2025]
+Finished job 140.
+6 of 14 steps (43%) done
+Select jobs to execute...
+
+[Fri Feb 14 15:02:22 2025]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap2_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap2_compto5_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap2.snf
+    jobid: 80
+    reason: Set of input files has changed since last execution
+    wildcards: comp_sample=horse_04_56, phases=hap2
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap2_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap2.snf
+  
+[Fri Feb 14 15:02:42 2025]
+Finished job 80.
+7 of 14 steps (50%) done
+Select jobs to execute...
+
+[Fri Feb 14 15:02:42 2025]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_compto5_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1.snf
+    jobid: 2
+    reason: Set of input files has changed since last execution
+    wildcards: comp_sample=horse_05_608, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1.snf
+  
+[Fri Feb 14 15:02:58 2025]
+Finished job 2.
+8 of 14 steps (57%) done
+Select jobs to execute...
+
+[Fri Feb 14 15:02:58 2025]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap2_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap2_compto5_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap2.snf
+    jobid: 100
+    reason: Set of input files has changed since last execution
+    wildcards: comp_sample=horse_06_1212, phases=hap2
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap2_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap2.snf
+  
+[Fri Feb 14 15:03:17 2025]
+Finished job 100.
+9 of 14 steps (64%) done
+Select jobs to execute...
+
+[Fri Feb 14 15:03:17 2025]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap2_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap2_compto5_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap2.snf
+    jobid: 160
+    reason: Set of input files has changed since last execution
+    wildcards: comp_sample=horse_02_205, phases=hap2
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap2_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap2.snf
+  
+[Fri Feb 14 15:03:36 2025]
+Finished job 160.
+10 of 14 steps (71%) done
+Select jobs to execute...
+
+[Fri Feb 14 15:03:36 2025]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap1_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap1_compto5_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap1.snf
+    jobid: 130
+    reason: Set of input files has changed since last execution
+    wildcards: comp_sample=horse_01_200, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap1_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap1.snf
+  
+[Fri Feb 14 15:03:55 2025]
+Finished job 130.
+11 of 14 steps (79%) done
+Select jobs to execute...
+
+[Fri Feb 14 15:03:55 2025]
+rule findSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap1_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap1_compto5_sorted.bam.bai
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap1.snf
+    jobid: 70
+    reason: Set of input files has changed since last execution
+    wildcards: comp_sample=horse_04_56, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap1_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap1.snf
+  
+[Fri Feb 14 15:04:15 2025]
+Finished job 70.
+12 of 14 steps (86%) done
+Select jobs to execute...
+
+[Fri Feb 14 15:04:15 2025]
+rule compareSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap2.snf
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1_compto5.vcf
+    jobid: 1
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1_compto5.vcf; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap1.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap2.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap1.snf
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap1.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.hap2.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap1.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_04_56.hap2.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap1.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_06_1212.hap2.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap1.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_03_238.hap2.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap1.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_01_200.hap2.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap1.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_02_205.hap2.snf       --vcf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1_compto5.vcf
+  
+[Fri Feb 14 15:46:21 2025]
+Finished job 1.
+13 of 14 steps (93%) done
+Select jobs to execute...
+
+[Fri Feb 14 15:46:21 2025]
+localrule all:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1_compto5.vcf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1_compto5.vcf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlotPrimary/primaryPlotDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/plotDone.txt
+    jobid: 0
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1_compto5.vcf
+    resources: tmpdir=/tmp
+
+[Fri Feb 14 15:46:21 2025]
+Finished job 0.
+14 of 14 steps (100%) done
+Complete log: .snakemake/log/2025-02-14T150008.661104.snakemake.log

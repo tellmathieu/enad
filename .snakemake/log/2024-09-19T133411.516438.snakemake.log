@@ -1,0 +1,172 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=70000
+Job stats:
+job             count
+------------  -------
+all                 1
+sameChrNames        6
+total               7
+
+Select jobs to execute...
+
+[Thu Sep 19 13:34:15 2024]
+rule sameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr.fa
+    jobid: 22
+    reason: Code has changed since last execution
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+    lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt)
+    currentline=1
+    while [ $currentline -lt $lines ]
+      do
+        name=$(sed "${currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt | awk '{ print $2 }')
+        grep "${name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr.fa
+        grep "${name}" /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr.fa
+        ((currentline++))
+      done
+  
+
+[Thu Sep 19 13:34:15 2024]
+rule sameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr.fa
+    jobid: 12
+    reason: Code has changed since last execution
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp
+
+
+    lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt)
+    currentline=1
+    while [ $currentline -lt $lines ]
+      do
+        name=$(sed "${currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt | awk '{ print $2 }')
+        grep "${name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa
+        grep "${name}" /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr.fa
+        ((currentline++))
+      done
+  
+
+[Thu Sep 19 13:34:15 2024]
+rule sameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr.fa
+    jobid: 17
+    reason: Code has changed since last execution
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp
+
+
+    lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt)
+    currentline=1
+    while [ $currentline -lt $lines ]
+      do
+        name=$(sed "${currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt | awk '{ print $2 }')
+        grep "${name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr.fa
+        grep "${name}" /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr.fa
+        ((currentline++))
+      done
+  
+
+[Thu Sep 19 13:34:15 2024]
+rule sameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_238/horse_04_238_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_238/horse_04_238_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_238/horse_04_238_ref_chr.fa
+    jobid: 7
+    reason: Code has changed since last execution
+    wildcards: sample=horse_04_238
+    resources: tmpdir=/tmp
+
+
+    lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt)
+    currentline=1
+    while [ $currentline -lt $lines ]
+      do
+        name=$(sed "${currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt | awk '{ print $2 }')
+        grep "${name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_238/horse_04_238_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_238/horse_04_238_scaffold_chr.fa
+        grep "${name}" /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_238/horse_04_238_ref_chr.fa
+        ((currentline++))
+      done
+  
+
+[Thu Sep 19 13:34:15 2024]
+rule sameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr.fa
+    jobid: 1
+    reason: Code has changed since last execution
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp
+
+
+    lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt)
+    currentline=1
+    while [ $currentline -lt $lines ]
+      do
+        name=$(sed "${currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt | awk '{ print $2 }')
+        grep "${name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr.fa
+        grep "${name}" /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr.fa
+        ((currentline++))
+      done
+  
+
+[Thu Sep 19 13:34:15 2024]
+rule sameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr.fa
+    jobid: 27
+    reason: Code has changed since last execution
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp
+
+
+    lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt)
+    currentline=1
+    while [ $currentline -lt $lines ]
+      do
+        name=$(sed "${currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt | awk '{ print $2 }')
+        grep "${name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr.fa
+        grep "${name}" /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr.fa
+        ((currentline++))
+      done
+  
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule sameChrNames in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 201:
+Job 22  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr.fa
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr.fa
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule sameChrNames in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 201:
+Job 12  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr.fa
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule sameChrNames in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 201:
+Job 17  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr.fa
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr.fa
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule sameChrNames in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 201:
+Job 7  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_238/horse_04_238_scaffold_chr.fa
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_238/horse_04_238_ref_chr.fa
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule sameChrNames in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 201:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr.fa
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr.fa
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule sameChrNames in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 201:
+Job 27  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr.fa
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr.fa
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-09-19T133411.516438.snakemake.log

@@ -1,0 +1,1049 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                                    count
+-----------------------------------  -------
+alignToChainOfGenomes                      5
+all                                        1
+plotStructuralRearrangementCombined       32
+syntenyAnalysisForCombined                 5
+total                                     43
+
+Select jobs to execute...
+
+[Fri Jan  3 13:30:08 2025]
+rule alignToChainOfGenomes:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200.scaffold_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200comparison.sam
+    jobid: 202
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200comparison.sam; Set of input files has changed since last execution
+    wildcards: comp1=horse_03_238, comp2=horse_01_200
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238.scaffold_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200.scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200comparison.sam
+  
+[Fri Jan  3 13:39:15 2025]
+Finished job 202.
+1 of 43 steps (2%) done
+Select jobs to execute...
+
+[Fri Jan  3 13:39:15 2025]
+rule alignToChainOfGenomes:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212.scaffold_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212comparison.sam
+    jobid: 186
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212comparison.sam; Set of input files has changed since last execution
+    wildcards: comp1=horse_04_56, comp2=horse_06_1212
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56.scaffold_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212.scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212comparison.sam
+  
+
+[Fri Jan  3 13:39:15 2025]
+rule syntenyAnalysisForCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out
+    jobid: 195
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200comparison.sam
+    wildcards: comp1=horse_03_238, comp2=horse_01_200
+    threads: 15
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238.scaffold_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200.scaffold_chr_only.fa       -k -F S       --prefix horse_03_238-horse_01_200      --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri       --nc 15       --no-chrmatch
+  
+[Fri Jan  3 13:44:22 2025]
+Finished job 195.
+2 of 43 steps (5%) done
+Select jobs to execute...
+[Fri Jan  3 13:48:18 2025]
+Finished job 186.
+3 of 43 steps (7%) done
+
+[Fri Jan  3 13:48:18 2025]
+rule syntenyAnalysisForCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out
+    jobid: 179
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212comparison.sam
+    wildcards: comp1=horse_04_56, comp2=horse_06_1212
+    threads: 15
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56.scaffold_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212.scaffold_chr_only.fa       -k -F S       --prefix horse_04_56-horse_06_1212      --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri       --nc 15       --no-chrmatch
+  
+
+[Fri Jan  3 13:48:18 2025]
+rule alignToChainOfGenomes:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205.scaffold_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205comparison.sam
+    jobid: 210
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205comparison.sam; Set of input files has changed since last execution
+    wildcards: comp1=horse_01_200, comp2=horse_02_205
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200.scaffold_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205.scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205comparison.sam
+  
+[Fri Jan  3 13:53:18 2025]
+Finished job 179.
+4 of 43 steps (9%) done
+Select jobs to execute...
+[Fri Jan  3 13:57:55 2025]
+Finished job 210.
+5 of 43 steps (12%) done
+
+[Fri Jan  3 13:57:55 2025]
+rule alignToChainOfGenomes:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56.scaffold_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56comparison.sam
+    jobid: 178
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56comparison.sam; Set of input files has changed since last execution
+    wildcards: comp1=horse_05_608, comp2=horse_04_56
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56.scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56comparison.sam
+  
+
+[Fri Jan  3 13:57:55 2025]
+rule syntenyAnalysisForCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    jobid: 203
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205comparison.sam
+    wildcards: comp1=horse_01_200, comp2=horse_02_205
+    threads: 15
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200.scaffold_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205.scaffold_chr_only.fa       -k -F S       --prefix horse_01_200-horse_02_205      --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri       --nc 15       --no-chrmatch
+  
+[Fri Jan  3 14:02:58 2025]
+Finished job 203.
+6 of 43 steps (14%) done
+Select jobs to execute...
+[Fri Jan  3 14:06:19 2025]
+Finished job 178.
+7 of 43 steps (16%) done
+
+[Fri Jan  3 14:06:19 2025]
+rule syntenyAnalysisForCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out
+    jobid: 171
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56comparison.sam
+    wildcards: comp1=horse_05_608, comp2=horse_04_56
+    threads: 15
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56.scaffold_chr_only.fa       -k -F S       --prefix horse_05_608-horse_04_56      --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri       --nc 15       --no-chrmatch
+  
+
+[Fri Jan  3 14:06:19 2025]
+rule alignToChainOfGenomes:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238.scaffold_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238comparison.sam
+    jobid: 194
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238comparison.sam; Set of input files has changed since last execution
+    wildcards: comp1=horse_06_1212, comp2=horse_03_238
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign
+
+    minimap2       -a       -x asm5       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212.scaffold_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238.scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238comparison.sam
+  
+[Fri Jan  3 14:10:34 2025]
+Finished job 171.
+8 of 43 steps (19%) done
+[Fri Jan  3 14:14:33 2025]
+Finished job 194.
+9 of 43 steps (21%) done
+Select jobs to execute...
+
+[Fri Jan  3 14:14:33 2025]
+rule syntenyAnalysisForCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238comparison.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out
+    jobid: 187
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238comparison.sam
+    wildcards: comp1=horse_06_1212, comp2=horse_03_238
+    threads: 15
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri
+
+    syri       -c /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238comparison.sam       -r /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212.scaffold_chr_only.fa       -q /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238.scaffold_chr_only.fa       -k -F S       --prefix horse_06_1212-horse_03_238      --dir /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri       --nc 15       --no-chrmatch
+  
+[Fri Jan  3 14:19:03 2025]
+Finished job 187.
+10 of 43 steps (23%) done
+Select jobs to execute...
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr11_combined_output_plot.png
+    jobid: 221
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr11_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr11
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr11       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr11_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr5_combined_output_plot.png
+    jobid: 215
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr5_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr5
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr5       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr5_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr19_combined_output_plot.png
+    jobid: 229
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr19_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr19
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr19       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr19_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr26_combined_output_plot.png
+    jobid: 236
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr26_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr26
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr26       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr26_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr12_combined_output_plot.png
+    jobid: 222
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr12_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr12
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr12       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr12_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr6_combined_output_plot.png
+    jobid: 216
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr6_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr6
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr6       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr6_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr20_combined_output_plot.png
+    jobid: 230
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr20_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr20
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr20       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr20_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr13_combined_output_plot.png
+    jobid: 223
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr13_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr13
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr13       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr13_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr9_combined_output_plot.png
+    jobid: 219
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr9_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr9
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr9       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr9_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr23_combined_output_plot.png
+    jobid: 233
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr23_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr23
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr23       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr23_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr30_combined_output_plot.png
+    jobid: 240
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr30_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr30
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr30       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr30_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr1_combined_output_plot.png
+    jobid: 170
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr1_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr1
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr1       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr1_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr2_combined_output_plot.png
+    jobid: 212
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr2_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr2
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr2       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr2_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr16_combined_output_plot.png
+    jobid: 226
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr16_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr16
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr16       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr16_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr10_combined_output_plot.png
+    jobid: 220
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr10_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr10
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr10       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr10_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr24_combined_output_plot.png
+    jobid: 234
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr24_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr24
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr24       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr24_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr3_combined_output_plot.png
+    jobid: 213
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr3_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr3
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr3       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr3_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr17_combined_output_plot.png
+    jobid: 227
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr17_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr17
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr17       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr17_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr31_combined_output_plot.png
+    jobid: 241
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr31_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chr31
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr31       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr31_combined_output_plot.png"       | bash
+  
+
+[Fri Jan  3 14:19:03 2025]
+rule plotStructuralRearrangementCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chrX_combined_output_plot.png
+    jobid: 242
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chrX_combined_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out
+    wildcards: chr=chrX
+    resources: tmpdir=/tmp
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chrX       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chrX_combined_output_plot.png"       | bash
+  
+[Fri Jan  3 14:19:59 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 170
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr1_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr1       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr1_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:20:00 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 219
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr9_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr9       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr9_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:20:01 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 229
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr19_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr19       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr19_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:20:02 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 234
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr24_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr24       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr24_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:20:47 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 240
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr30_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr30       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr30_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:20:47 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 242
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chrX_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chrX       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chrX_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:20:47 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 220
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr10_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr10       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr10_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:20:48 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 215
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr5_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr5       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr5_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:21:01 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 230
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr20_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr20       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr20_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:21:01 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 216
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr6_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr6       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr6_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:21:01 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 222
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr12_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr12       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr12_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:21:02 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 227
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr17_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr17       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr17_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:21:02 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 223
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr13_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr13       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr13_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:21:03 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 213
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr3_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr3       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr3_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:21:03 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 233
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr23_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr23       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr23_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:21:03 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 236
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr26_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr26       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr26_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:21:06 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 241
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr31_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr31       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr31_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:21:06 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 221
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr11_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr11       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr11_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:21:07 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 226
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr16_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr16       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr16_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jan  3 14:21:07 2025]
+Error in rule plotStructuralRearrangementCombined:
+    jobid: 212
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt, /home/tmathieu/eNAD/resources/points_of_interest_historical.bed
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr2_combined_output_plot.png
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs
+
+    COMPS=(/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_05_608-horse_04_56syri/horse_05_608-horse_04_56syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_04_56-horse_06_1212syri/horse_04_56-horse_06_1212syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_06_1212-horse_03_238syri/horse_06_1212-horse_03_238syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_03_238-horse_01_200syri/horse_03_238-horse_01_200syri.out /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/chainAlign/horse_01_200-horse_02_205syri/horse_01_200-horse_02_205syri.out)
+    SR=()
+    for sample in ${COMPS[@]}
+      do
+        SR+=("--sr $sample ")
+      done
+    echo ${SR[@]}
+    echo "plotsr       ${SR[@]}       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt       --markers /home/tmathieu/eNAD/resources/points_of_interest_historical.bed       -H 8       -W 12       --chr chr2       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsWithSVs/syri_chr2_combined_output_plot.png"       | bash
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-01-03T133004.248117.snakemake.log

@@ -1,0 +1,32 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                           count
+--------------------------  -------
+alignToFirstControlPrimary        1
+all                               1
+convertSamToBamPrimary            1
+coverageStats                     6
+coverageStatsAgg                  1
+sortBamPrimary                    1
+total                            11
+
+Select jobs to execute...
+
+[Sat Feb 22 19:14:52 2025]
+rule coverageStats:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_04_56.primary_compto5_sorted.bam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56_statsDone.txt
+    jobid: 226
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56_statsDone.txt
+    wildcards: comp_sample=horse_04_56
+    resources: tmpdir=/tmp
+
+RuleException in rule coverageStats in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased_new.smk, line 679:
+NameError: The name 'sum+=$3' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+    samtools depth -a {input} | awk '{sum+=$3} END {print sum/NR}' > {output.stats}
+  

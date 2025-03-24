@@ -1,0 +1,49 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                                count
+-------------------------------  -------
+all                                    1
+makeGenomeFileForPlotSRCombined        1
+total                                  2
+
+Select jobs to execute...
+
+[Thu Oct  3 16:20:33 2024]
+rule makeGenomeFileForPlotSRCombined:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/reference_horse_03_238syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/reference_horse_04_56syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/reference_horse_01_200syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/reference_horse_06_1212syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/reference_horse_05_608syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/reference_horse_02_205syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt
+    jobid: 27
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt
+    resources: tmpdir=/tmp
+
+
+    echo "#file  name" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa	reference	lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt
+    SAMPLES=(horse_03_238 horse_04_56 horse_01_200 horse_06_1212 horse_05_608 horse_02_205)
+    echo ${SAMPLES[@]} >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt
+
+    #for sample in horse_03_238 horse_04_56 horse_01_200 horse_06_1212 horse_05_608 horse_02_205
+     # do
+      #echo /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/
+    #echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr_only.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr_only.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr_only.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr_only.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr_only.fa		lw:1.5" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt
+  
+[Thu Oct  3 16:20:33 2024]
+Finished job 27.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Thu Oct  3 16:20:33 2024]
+localrule all:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/horse_03_238_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/horse_04_56_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/horse_01_200_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/horse_06_1212_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/horse_05_608_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/horse_02_205_output_plot.png, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt
+    jobid: 0
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/syri_genomes.txt
+    resources: tmpdir=/tmp
+
+[Thu Oct  3 16:20:33 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-10-03T162031.351367.snakemake.log

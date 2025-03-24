@@ -1,0 +1,16 @@
+horse*/
+PB*/
+fastq/
+fasta/
+outputGenomes/
+busco_downloads/
+shortReads/
+plotsr*/
+logs/
+chainAlign/
+sniffles*/
+refAlign/
+intermediate_files/
+resources/
+wget_index.html.tmp
+*.pdf

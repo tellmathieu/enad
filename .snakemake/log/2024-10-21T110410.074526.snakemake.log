@@ -1,0 +1,83 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                                    count
+-----------------------------------  -------
+alignToChainOfGenomes                      5
+alignToReference                           6
+all                                        1
+changeNCtoChr                              6
+correct                                    2
+makeGenomeFileForPlotSR                    6
+plotStructuralRearrangement                6
+plotStructuralRearrangementCombined        1
+removeRagTag                               5
+sameChrNames                               6
+scaffold                                   5
+syntenyAnalysis                            6
+syntenyAnalysisForCombined                 5
+total                                     60
+
+Select jobs to execute...
+
+[Mon Oct 21 11:04:14 2024]
+rule sameChrNames:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/cleaned_ref_genome.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa
+    jobid: 52
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa; Updated input files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_rename.scaffold.fasta
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp
+
+
+    horse_01_200lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_01_200currentline=1
+    while [ "$horse_01_200currentline" -le "$horse_01_200lines" ]
+    do
+      horse_01_200name=$(sed "${horse_01_200currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      grep -A1 "${horse_01_200name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa
+      horse_01_200currentline=$(($horse_01_200currentline+1))
+    done
+  
+
+[Mon Oct 21 11:04:14 2024]
+rule correct:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/busco.pdf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.p_ctg.fa, /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/ragtag.correct.fasta
+    jobid: 7
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/ragtag.correct.fasta
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    ragtag.py correct       -u       -o horse_03_238       /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.p_ctg.fa
+  
+[Mon Oct 21 11:04:14 2024]
+Error in rule sameChrNames:
+    jobid: 52
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/cleaned_ref_genome.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa
+    shell:
+        
+    horse_01_200lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $1 }')
+    horse_01_200currentline=1
+    while [ "$horse_01_200currentline" -le "$horse_01_200lines" ]
+    do
+      horse_01_200name=$(sed "${horse_01_200currentline}q;d" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt | awk '{ print $2 }')
+      grep -A1 "${horse_01_200name}" /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_rename.scaffold.fasta >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa
+      horse_01_200currentline=$(($horse_01_200currentline+1))
+    done
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job sameChrNames since they might be corrupted:
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa
+[Mon Oct 21 11:22:34 2024]
+Finished job 7.
+1 of 60 steps (2%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-10-21T110410.074526.snakemake.log

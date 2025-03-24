@@ -1,0 +1,229 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                    count
+-------------------  -------
+BUSCOanalysis             12
+alignToFirstControl       10
+all                        1
+buscoRscript               1
+changeNCtoChr             12
+combineBUSCO               1
+compareSVs                 1
+convertSamToBam           10
+correct                   12
+de_novo_gfa_to_fa         11
+findSVs                   10
+indexBam                  10
+parseBUSCO                12
+removeRagTag              12
+sameChrNames              12
+scaffold                  12
+sortBam                   10
+total                    149
+
+Select jobs to execute...
+
+[Thu Nov 21 15:38:18 2024]
+rule de_novo_gfa_to_fa:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56/horse_04_56.asm.bp.hap2.p_ctg.gfa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56/horse_04_56.asm.bp.hap2.p_ctg.fa
+    jobid: 24
+    reason: Forced execution
+    wildcards: sample=horse_04_56, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    #convert the output gfa file to a traditional fasta file
+    awk '/^S/{print ">"$2;print $3}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56/horse_04_56.asm.bp.hap2.p_ctg.gfa > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56/horse_04_56.asm.bp.hap2.p_ctg.fa
+  
+
+[Thu Nov 21 15:38:19 2024]
+rule BUSCOanalysis:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.hap1.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/short_summary.specific.laurasiatheria_odb10.horse_01_200.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/run_laurasiatheria_odb10/hap1.full_table.tsv
+    jobid: 26
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/short_summary.specific.laurasiatheria_odb10.horse_01_200.hap1.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/run_laurasiatheria_odb10/hap1.full_table.tsv; Updated input files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.hap1.p_ctg.fa
+    wildcards: sample=horse_01_200, phases=hap1
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    busco -c 20 --metaeuk       --metaeuk_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       --metaeuk_rerun_parameters="--disk-space-limit=1000M,--remove-tmp-files=1"       -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.hap1.p_ctg.fa       -o horse_01_200.hap1       -m genome       -f       -l laurasiatheria_odb10
+  
+
+[Thu Nov 21 15:38:19 2024]
+rule de_novo_gfa_to_fa:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.hap2.p_ctg.gfa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.hap2.p_ctg.fa
+    jobid: 42
+    reason: Forced execution
+    wildcards: sample=horse_05_608, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    #convert the output gfa file to a traditional fasta file
+    awk '/^S/{print ">"$2;print $3}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.hap2.p_ctg.gfa > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.hap2.p_ctg.fa
+  
+
+[Thu Nov 21 15:38:19 2024]
+rule de_novo_gfa_to_fa:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.hap2.p_ctg.gfa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.hap2.p_ctg.fa
+    jobid: 30
+    reason: Forced execution
+    wildcards: sample=horse_01_200, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    #convert the output gfa file to a traditional fasta file
+    awk '/^S/{print ">"$2;print $3}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.hap2.p_ctg.gfa > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.hap2.p_ctg.fa
+  
+
+[Thu Nov 21 15:38:20 2024]
+rule de_novo_gfa_to_fa:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap2.p_ctg.gfa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap2.p_ctg.fa
+    jobid: 18
+    reason: Forced execution
+    wildcards: sample=horse_03_238, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    #convert the output gfa file to a traditional fasta file
+    awk '/^S/{print ">"$2;print $3}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap2.p_ctg.gfa > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap2.p_ctg.fa
+  
+
+[Thu Nov 21 15:38:20 2024]
+rule de_novo_gfa_to_fa:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap2.p_ctg.gfa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap2.p_ctg.fa
+    jobid: 48
+    reason: Forced execution
+    wildcards: sample=horse_02_205, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    #convert the output gfa file to a traditional fasta file
+    awk '/^S/{print ">"$2;print $3}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap2.p_ctg.gfa > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap2.p_ctg.fa
+  
+
+[Thu Nov 21 15:38:20 2024]
+rule de_novo_gfa_to_fa:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap2.p_ctg.gfa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap2.p_ctg.fa
+    jobid: 36
+    reason: Forced execution
+    wildcards: sample=horse_06_1212, phases=hap2
+    resources: tmpdir=/tmp
+
+
+    #convert the output gfa file to a traditional fasta file
+    awk '/^S/{print ">"$2;print $3}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap2.p_ctg.gfa > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap2.p_ctg.fa
+  
+
+[Thu Nov 21 15:38:21 2024]
+rule de_novo_gfa_to_fa:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.hap1.p_ctg.gfa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.hap1.p_ctg.fa
+    jobid: 39
+    reason: Forced execution
+    wildcards: sample=horse_05_608, phases=hap1
+    resources: tmpdir=/tmp
+
+
+    #convert the output gfa file to a traditional fasta file
+    awk '/^S/{print ">"$2;print $3}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.hap1.p_ctg.gfa > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.hap1.p_ctg.fa
+  
+
+[Thu Nov 21 15:38:21 2024]
+rule de_novo_gfa_to_fa:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap1.p_ctg.gfa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap1.p_ctg.fa
+    jobid: 15
+    reason: Forced execution
+    wildcards: sample=horse_03_238, phases=hap1
+    resources: tmpdir=/tmp
+
+
+    #convert the output gfa file to a traditional fasta file
+    awk '/^S/{print ">"$2;print $3}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap1.p_ctg.gfa > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.hap1.p_ctg.fa
+  
+
+[Thu Nov 21 15:38:22 2024]
+rule de_novo_gfa_to_fa:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap1.p_ctg.gfa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap1.p_ctg.fa
+    jobid: 45
+    reason: Forced execution
+    wildcards: sample=horse_02_205, phases=hap1
+    resources: tmpdir=/tmp
+
+
+    #convert the output gfa file to a traditional fasta file
+    awk '/^S/{print ">"$2;print $3}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap1.p_ctg.gfa > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.hap1.p_ctg.fa
+  
+
+[Thu Nov 21 15:38:22 2024]
+rule de_novo_gfa_to_fa:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap1.p_ctg.gfa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap1.p_ctg.fa
+    jobid: 33
+    reason: Forced execution
+    wildcards: sample=horse_06_1212, phases=hap1
+    resources: tmpdir=/tmp
+
+
+    #convert the output gfa file to a traditional fasta file
+    awk '/^S/{print ">"$2;print $3}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap1.p_ctg.gfa > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.hap1.p_ctg.fa
+  
+
+[Thu Nov 21 15:38:23 2024]
+rule de_novo_gfa_to_fa:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56/horse_04_56.asm.bp.hap1.p_ctg.gfa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56/horse_04_56.asm.bp.hap1.p_ctg.fa
+    jobid: 21
+    reason: Forced execution
+    wildcards: sample=horse_04_56, phases=hap1
+    resources: tmpdir=/tmp
+
+
+    #convert the output gfa file to a traditional fasta file
+    awk '/^S/{print ">"$2;print $3}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56/horse_04_56.asm.bp.hap1.p_ctg.gfa > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_56/horse_04_56.asm.bp.hap1.p_ctg.fa
+  
+[Thu Nov 21 15:38:43 2024]
+Finished job 42.
+1 of 149 steps (1%) done
+Select jobs to execute...
+[Thu Nov 21 15:38:45 2024]
+Finished job 24.
+2 of 149 steps (1%) done
+[Thu Nov 21 15:38:47 2024]
+Finished job 30.
+3 of 149 steps (2%) done
+[Thu Nov 21 15:38:47 2024]
+Finished job 18.
+4 of 149 steps (3%) done
+[Thu Nov 21 15:39:09 2024]
+Finished job 15.
+5 of 149 steps (3%) done
+[Thu Nov 21 15:39:09 2024]
+Finished job 48.
+6 of 149 steps (4%) done
+[Thu Nov 21 15:39:10 2024]
+Finished job 33.
+7 of 149 steps (5%) done
+[Thu Nov 21 15:39:10 2024]
+Finished job 36.
+8 of 149 steps (5%) done
+[Thu Nov 21 15:39:10 2024]
+Finished job 21.
+9 of 149 steps (6%) done
+[Thu Nov 21 15:39:10 2024]
+Finished job 39.
+10 of 149 steps (7%) done
+[Thu Nov 21 15:39:10 2024]
+Finished job 45.
+11 of 149 steps (7%) done

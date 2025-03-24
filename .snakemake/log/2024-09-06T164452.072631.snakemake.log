@@ -1,0 +1,83 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=70000
+Job stats:
+job                  count
+-----------------  -------
+BUSCOanalysis            6
+all                      1
+de_novo_gfa_to_fa        6
+initial_assembly         4
+total                   17
+
+Select jobs to execute...
+
+[Fri Sep  6 16:44:56 2024]
+rule de_novo_gfa_to_fa:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.p_ctg.gfa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.p_ctg.fa
+    jobid: 8
+    reason: Code has changed since last execution
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp
+
+
+    #convert the output gfa file to a traditional fasta file
+    awk '/^S/{print ">"$2;print $3}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.p_ctg.gfa > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.p_ctg.fa
+  
+
+[Fri Sep  6 16:44:56 2024]
+rule initial_assembly:
+    input: /home/tmathieu/eNAD/fastq/horse_03_238.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.p_ctg.gfa
+    jobid: 3
+    reason: Code has changed since last execution
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp, mem_mb=70000, mem_mib=66758
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238
+    
+    #de novo assembly
+    hifiasm -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm -t 20 /home/tmathieu/eNAD/fastq/horse_03_238.fastq
+  
+
+[Fri Sep  6 16:44:56 2024]
+rule de_novo_gfa_to_fa:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.p_ctg.gfa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.p_ctg.fa
+    jobid: 17
+    reason: Code has changed since last execution
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp
+
+
+    #convert the output gfa file to a traditional fasta file
+    awk '/^S/{print ">"$2;print $3}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.p_ctg.gfa > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.p_ctg.fa
+  
+[Fri Sep  6 16:45:19 2024]
+Finished job 17.
+1 of 17 steps (6%) done
+Select jobs to execute...
+[Fri Sep  6 16:45:20 2024]
+Finished job 8.
+2 of 17 steps (12%) done
+[Fri Sep  6 17:08:51 2024]
+Error in rule initial_assembly:
+    jobid: 3
+    input: /home/tmathieu/eNAD/fastq/horse_03_238.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.p_ctg.gfa
+    shell:
+        
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238
+    
+    #de novo assembly
+    hifiasm -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm -t 20 /home/tmathieu/eNAD/fastq/horse_03_238.fastq
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-09-06T164452.072631.snakemake.log

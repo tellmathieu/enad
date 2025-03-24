@@ -1,0 +1,3 @@
+TypeError in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 30:
+'int' object is not iterable
+  File "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk", line 30, in <module>

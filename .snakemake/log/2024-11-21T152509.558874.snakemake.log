@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in rule plotStructuralRearrangementCombined in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased.smk, line 526:
+Missing input files for rule plotStructuralRearrangementCombined:
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/plotsrGraphsPhased/syri_chr1_combined_output_plot.png
+    wildcards: chr=chr1
+    affected files:
+        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/reference_horse_05_608.hap2syri.out
+        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/reference_horse_05_608.hap1syri.out

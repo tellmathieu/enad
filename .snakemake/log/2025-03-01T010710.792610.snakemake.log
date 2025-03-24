@@ -1,0 +1,33 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                                    count
+-----------------------------------  -------
+alignFastQToReference                      6
+alignToChainOfGenomes                      5
+all                                        1
+convertSamToBamSortIndex                   6
+coverageStatsInitial                       6
+plotStructuralRearrangementCombined       32
+syntenyAnalysisForCombined                 5
+total                                     61
+
+Select jobs to execute...
+
+[Sat Mar  1 01:07:14 2025]
+rule alignFastQToReference:
+    input: /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/fastq/horse_03_238.fastq
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/refAlign/horse_03_238.sam
+    jobid: 162
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/refAlign/horse_03_238.sam
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/refAlign
+
+    minimap2       -a       -x map-hifi       --eqx       /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/fastq/horse_03_238.fastq       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/refAlign/horse_03_238.sam
+  

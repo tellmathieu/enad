@@ -1,0 +1,70 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                                           count
+------------------------------------------  -------
+all                                               1
+compareChrLen                                     1
+makeGenomeFileForPlotSRCombined                   1
+plotStructuralRearrangementCombined              32
+plotStructuralRearrangementCombinedWithPOI       32
+total                                            67
+
+Select jobs to execute...
+
+[Mon Oct 28 16:01:31 2024]
+rule compareChrLen:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.len, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr_horse_05_608.len
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chrFinal.len
+    jobid: 97
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chrFinal.len; Updated input files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr_horse_05_608.len
+    resources: tmpdir=/tmp
+
+
+    echo "" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chrFinal.len
+
+    lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.len | awk '{ print $1 }')
+    currentline=1
+    while [ "$currentline" -le "$lines" ]
+    do
+      chrname=$(sed -n ${currentline}p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.len | awk '{ print $2 }')
+      reflen=$(sed -n ${currentline}p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.len | awk '{ print $2 }')
+      onelen=$(sed -n ${currentline}p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.len | awk '{ print $2 }')
+      if [ "$reflen" -le "$onelen"]; then
+        echo "$chrname	$onelen" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chrFinal.len
+      else
+        echo "$chrname	$reflen" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chrFinal.len
+      fi
+  
+[Mon Oct 28 16:01:31 2024]
+Error in rule compareChrLen:
+    jobid: 97
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.len, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr_horse_05_608.len
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chrFinal.len
+    shell:
+        
+    echo "" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chrFinal.len
+
+    lines=$(wc -l /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.len | awk '{ print $1 }')
+    currentline=1
+    while [ "$currentline" -le "$lines" ]
+    do
+      chrname=$(sed -n ${currentline}p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.len | awk '{ print $2 }')
+      reflen=$(sed -n ${currentline}p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.len | awk '{ print $2 }')
+      onelen=$(sed -n ${currentline}p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.len | awk '{ print $2 }')
+      if [ "$reflen" -le "$onelen"]; then
+        echo "$chrname	$onelen" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chrFinal.len
+      else
+        echo "$chrname	$reflen" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chrFinal.len
+      fi
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job compareChrLen since they might be corrupted:
+/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chrFinal.len
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-10-28T160015.227569.snakemake.log

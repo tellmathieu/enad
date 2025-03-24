@@ -1,0 +1,13 @@
+Building DAG of jobs...
+AmbiguousRuleException:
+Rules scaffold and scaffoldPrimary are ambiguous for the file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/ragtag.scaffold.fasta.
+Consider starting rule output with a unique prefix, constrain your wildcards, or use the ruleorder directive.
+Wildcards:
+	scaffold: phases=hap1,sample=horse_05_608
+	scaffoldPrimary: sample=horse_05_608.hap1
+Expected input files:
+	scaffold: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/ragtag.correct.fasta /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+	scaffoldPrimary: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/ragtag.correct.fasta /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_genomic.fna
+Expected output files:
+	scaffold: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/ragtag.scaffold.fasta
+	scaffoldPrimary: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608.hap1/ragtag.scaffold.fasta

@@ -1,0 +1,3 @@
+SyntaxError:
+Not all output, log and benchmark files of rule coverageStats contain the same wildcards. This is crucial though, in order to avoid that two or more jobs write to the same file.
+  File "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased_new.smk", line 685, in <module>

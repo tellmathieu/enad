@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in rule coverageStatsInitial in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased_new.smk, line 483:
+Wildcards in input files cannot be determined from output files:
+'sample'

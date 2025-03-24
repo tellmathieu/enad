@@ -1,0 +1,283 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                            count
+---------------------------  -------
+all                                1
+makeGenomeFileForPlotSR            6
+plotStructuralRearrangement        6
+total                             13
+
+Select jobs to execute...
+
+[Fri Sep 27 15:57:10 2024]
+rule makeGenomeFileForPlotSR:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+    jobid: 70
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt; Code has changed since last execution
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp
+
+
+    echo "#file  name" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_scaffold_chr.fa	horse_02_205	" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_ref_chr.fa	reference	" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+  
+
+[Fri Sep 27 15:57:10 2024]
+rule makeGenomeFileForPlotSR:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+    jobid: 63
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt; Code has changed since last execution
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+    echo "#file  name" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr.fa	horse_05_608	" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_ref_chr.fa	reference	" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+  
+
+[Fri Sep 27 15:57:10 2024]
+rule makeGenomeFileForPlotSR:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt
+    jobid: 49
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt; Code has changed since last execution
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp
+
+
+    echo "#file  name" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_scaffold_chr.fa	horse_01_200	" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_ref_chr.fa	reference	" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt
+  
+
+[Fri Sep 27 15:57:10 2024]
+rule makeGenomeFileForPlotSR:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+    jobid: 35
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt; Code has changed since last execution
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp
+
+
+    echo "#file  name" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_scaffold_chr.fa	horse_03_238	" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_ref_chr.fa	reference	" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+  
+
+[Fri Sep 27 15:57:10 2024]
+rule makeGenomeFileForPlotSR:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+    jobid: 56
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt; Code has changed since last execution
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp
+
+
+    echo "#file  name" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_scaffold_chr.fa	horse_06_1212	" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_ref_chr.fa	reference	" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+  
+
+[Fri Sep 27 15:57:10 2024]
+rule makeGenomeFileForPlotSR:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_ref_chr.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt
+    jobid: 42
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt; Code has changed since last execution
+    wildcards: sample=horse_04_56
+    resources: tmpdir=/tmp
+
+
+    echo "#file  name" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_scaffold_chr.fa	horse_04_56	" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt
+    echo "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56_ref_chr.fa	reference	" >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt
+  
+[Fri Sep 27 15:57:10 2024]
+Finished job 70.
+1 of 13 steps (8%) done
+[Fri Sep 27 15:57:10 2024]
+Finished job 63.
+2 of 13 steps (15%) done
+[Fri Sep 27 15:57:10 2024]
+Finished job 49.
+3 of 13 steps (23%) done
+[Fri Sep 27 15:57:10 2024]
+Finished job 35.
+4 of 13 steps (31%) done
+Select jobs to execute...
+
+[Fri Sep 27 15:57:10 2024]
+rule plotStructuralRearrangement:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/horse_05_608_output_plot.png
+    jobid: 57
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/horse_05_608_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+      -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/horse_05_608_output_plot.png
+  
+
+[Fri Sep 27 15:57:10 2024]
+rule plotStructuralRearrangement:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/horse_01_200_output_plot.png
+    jobid: 43
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/horse_01_200_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt
+    wildcards: sample=horse_01_200
+    resources: tmpdir=/tmp
+
+
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt
+      -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/horse_01_200_output_plot.png
+  
+
+[Fri Sep 27 15:57:11 2024]
+rule plotStructuralRearrangement:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/horse_03_238_output_plot.png
+    jobid: 1
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/horse_03_238_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp
+
+
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+      -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/horse_03_238_output_plot.png
+  
+
+[Fri Sep 27 15:57:11 2024]
+rule plotStructuralRearrangement:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/horse_02_205_output_plot.png
+    jobid: 64
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/horse_02_205_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp
+
+
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+      -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/horse_02_205_output_plot.png
+  
+[Fri Sep 27 15:57:11 2024]
+Finished job 56.
+5 of 13 steps (38%) done
+[Fri Sep 27 15:57:11 2024]
+Finished job 42.
+6 of 13 steps (46%) done
+Select jobs to execute...
+
+[Fri Sep 27 15:57:11 2024]
+rule plotStructuralRearrangement:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/horse_04_56_output_plot.png
+    jobid: 36
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/horse_04_56_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt
+    wildcards: sample=horse_04_56
+    resources: tmpdir=/tmp
+
+
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt
+      -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/horse_04_56_output_plot.png
+  
+
+[Fri Sep 27 15:57:11 2024]
+rule plotStructuralRearrangement:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/horse_06_1212_output_plot.png
+    jobid: 50
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/horse_06_1212_output_plot.png; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp
+
+
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+      -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/horse_06_1212_output_plot.png
+  
+[Fri Sep 27 15:58:18 2024]
+Error in rule plotStructuralRearrangement:
+    jobid: 36
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/horse_04_56_output_plot.png
+    shell:
+        
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/genomes.txt
+      -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/syri/horse_04_56_output_plot.png
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Sep 27 15:58:18 2024]
+Error in rule plotStructuralRearrangement:
+    jobid: 64
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/horse_02_205_output_plot.png
+    shell:
+        
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/genomes.txt
+      -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/syri/horse_02_205_output_plot.png
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Sep 27 15:58:19 2024]
+Error in rule plotStructuralRearrangement:
+    jobid: 57
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/horse_05_608_output_plot.png
+    shell:
+        
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/genomes.txt
+      -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/syri/horse_05_608_output_plot.png
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Sep 27 15:58:20 2024]
+Error in rule plotStructuralRearrangement:
+    jobid: 1
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/horse_03_238_output_plot.png
+    shell:
+        
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/genomes.txt
+      -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/syri/horse_03_238_output_plot.png
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Sep 27 15:58:23 2024]
+Error in rule plotStructuralRearrangement:
+    jobid: 43
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/horse_01_200_output_plot.png
+    shell:
+        
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/genomes.txt
+      -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/syri/horse_01_200_output_plot.png
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Sep 27 15:58:23 2024]
+Error in rule plotStructuralRearrangement:
+    jobid: 50
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/syri.out, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/horse_06_1212_output_plot.png
+    shell:
+        
+    plotsr       --sr /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/syri.out       --genomes /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/genomes.txt
+      -H 8       -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/syri/horse_06_1212_output_plot.png
+  
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-09-27T155708.310018.snakemake.log

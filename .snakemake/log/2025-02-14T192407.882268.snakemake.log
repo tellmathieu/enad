@@ -1,0 +1,127 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+compareSVsPrimary        1
+findSVsPrimary           5
+total                    7
+
+Select jobs to execute...
+
+[Fri Feb 14 19:24:11 2025]
+rule findSVsPrimary:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary_compto5_sorted.bam.bai, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary.vcf
+    jobid: 83
+    reason: Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: comp_sample=horse_01_200
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary.snf       --vcf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary.vcf       --reference /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa       --threads 16
+  
+[Fri Feb 14 19:24:42 2025]
+Finished job 83.
+1 of 7 steps (14%) done
+Select jobs to execute...
+
+[Fri Feb 14 19:24:42 2025]
+rule findSVsPrimary:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_06_1212.primary_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_06_1212.primary_compto5_sorted.bam.bai, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_06_1212.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_06_1212.primary.vcf
+    jobid: 61
+    reason: Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: comp_sample=horse_06_1212
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_06_1212.primary_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_06_1212.primary.snf       --vcf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_06_1212.primary.vcf       --reference /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa       --threads 16
+  
+[Fri Feb 14 19:24:49 2025]
+Finished job 61.
+2 of 7 steps (29%) done
+Select jobs to execute...
+
+[Fri Feb 14 19:24:49 2025]
+rule findSVsPrimary:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_04_56.primary_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_04_56.primary_compto5_sorted.bam.bai, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_04_56.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_04_56.primary.vcf
+    jobid: 44
+    reason: Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: comp_sample=horse_04_56
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_04_56.primary_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_04_56.primary.snf       --vcf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_04_56.primary.vcf       --reference /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa       --threads 16
+  
+[Fri Feb 14 19:25:05 2025]
+Finished job 44.
+3 of 7 steps (43%) done
+Select jobs to execute...
+
+[Fri Feb 14 19:25:05 2025]
+rule findSVsPrimary:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_02_205.primary_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_02_205.primary_compto5_sorted.bam.bai, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_02_205.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_02_205.primary.vcf
+    jobid: 94
+    reason: Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: comp_sample=horse_02_205
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_02_205.primary_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_02_205.primary.snf       --vcf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_02_205.primary.vcf       --reference /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa       --threads 16
+  
+[Fri Feb 14 19:25:12 2025]
+Finished job 94.
+4 of 7 steps (57%) done
+Select jobs to execute...
+
+[Fri Feb 14 19:25:12 2025]
+rule findSVsPrimary:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_03_238.primary_compto5_sorted.bam, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_03_238.primary_compto5_sorted.bam.bai, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_03_238.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_03_238.primary.vcf
+    jobid: 72
+    reason: Set of input files has changed since last execution; Code has changed since last execution
+    wildcards: comp_sample=horse_03_238
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_03_238.primary_compto5_sorted.bam       --snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_03_238.primary.snf       --vcf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_03_238.primary.vcf       --reference /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa       --threads 16
+  
+[Fri Feb 14 19:25:19 2025]
+Finished job 72.
+5 of 7 steps (71%) done
+Select jobs to execute...
+
+[Fri Feb 14 19:25:19 2025]
+rule compareSVsPrimary:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_04_56.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_06_1212.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_03_238.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_02_205.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/primarySVs1_compto5.vcf
+    jobid: 43
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/primarySVs1_compto5.vcf; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_03_238.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_02_205.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_06_1212.primary.snf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_04_56.primary.snf
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    sniffles       --input /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_04_56.primary.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_06_1212.primary.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_03_238.primary.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary.snf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_02_205.primary.snf       --vcf /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/primarySVs1_compto5.vcf       --reference /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/reference_genome_chr_only.fa       --threads 16
+  
+[Fri Feb 14 19:25:21 2025]
+Finished job 43.
+6 of 7 steps (86%) done
+Select jobs to execute...
+
+[Fri Feb 14 19:25:21 2025]
+localrule all:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1_compto5.vcf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/primarySVs1_compto5.vcf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlotPrimary/primaryPlotDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/plotDone.txt
+    jobid: 0
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/primarySVs1_compto5.vcf
+    resources: tmpdir=/tmp
+
+[Fri Feb 14 19:25:21 2025]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2025-02-14T192407.882268.snakemake.log

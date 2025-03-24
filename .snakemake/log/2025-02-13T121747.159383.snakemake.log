@@ -1,0 +1,61 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job               count
+--------------  -------
+all                   1
+plotSVs               1
+plotSVsPrimary        1
+total                 3
+
+Select jobs to execute...
+
+[Thu Feb 13 12:17:50 2025]
+rule plotSVs:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1.vcf
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/plotDone.txt
+    jobid: 232
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/plotDone.txt
+    resources: tmpdir=/tmp
+
+
+    python3 -m sniffles2_plot -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1.vcf -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot
+
+    echo "Plots made" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/plotDone.txt
+  
+
+[Thu Feb 13 12:17:50 2025]
+rule plotSVsPrimary:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/primarySVs1.vcf
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlotPrimary/primaryPlotDone.txt
+    jobid: 200
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlotPrimary/primaryPlotDone.txt
+    resources: tmpdir=/tmp
+
+
+    python3 -m sniffles2_plot -i /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/primarySVs1.vcf -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlotPrimary
+
+    echo "Plots made" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlotPrimary/primaryPlotDone.txt
+  
+[Thu Feb 13 12:18:07 2025]
+Finished job 200.
+1 of 3 steps (33%) done
+[Thu Feb 13 12:18:21 2025]
+Finished job 232.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Thu Feb 13 12:18:21 2025]
+localrule all:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/phasedSVs1.vcf, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56/horse_04_56.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlotPrimary/primaryPlotDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/plotDone.txt
+    jobid: 0
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlot/plotDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPlotPrimary/primaryPlotDone.txt
+    resources: tmpdir=/tmp
+
+[Thu Feb 13 12:18:21 2025]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2025-02-13T121747.159383.snakemake.log

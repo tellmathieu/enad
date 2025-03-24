@@ -1,0 +1,3 @@
+NameError in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 55:
+name 'maindir' is not defined
+  File "/group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk", line 55, in <module>

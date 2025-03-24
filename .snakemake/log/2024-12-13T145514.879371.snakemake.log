@@ -1,0 +1,96 @@
+Building DAG of jobs...
+WorkflowError:
+WorkflowError:
+    WorkflowError:
+        WorkflowError:
+            MissingInputException: Missing input files for rule de_novo_gfa_to_fa:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.fa
+                wildcards: sample=horse_05_608, phases=primary
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.gfa
+            MissingInputException: Missing input files for rule alignToFirstControlPrimary:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.primary_compto5.sam
+                wildcards: sample=horse_05_608
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa
+        WorkflowError:
+            MissingInputException: Missing input files for rule de_novo_gfa_to_fa:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.fa
+                wildcards: sample=horse_05_608, phases=primary
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.gfa
+            MissingInputException: Missing input files for rule alignToFirstControlPrimary:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.primary_compto5.sam
+                wildcards: sample=horse_05_608
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa
+    WorkflowError:
+        WorkflowError:
+            MissingInputException: Missing input files for rule de_novo_gfa_to_fa:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.fa
+                wildcards: sample=horse_05_608, phases=primary
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.gfa
+            MissingInputException: Missing input files for rule alignToFirstControlPrimary:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.primary_compto5.sam
+                wildcards: sample=horse_05_608
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa
+        WorkflowError:
+            MissingInputException: Missing input files for rule de_novo_gfa_to_fa:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.fa
+                wildcards: sample=horse_05_608, phases=primary
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.gfa
+            MissingInputException: Missing input files for rule alignToFirstControlPrimary:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.primary_compto5.sam
+                wildcards: sample=horse_05_608
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa
+WorkflowError:
+    WorkflowError:
+        WorkflowError:
+            MissingInputException: Missing input files for rule de_novo_gfa_to_fa:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.fa
+                wildcards: sample=horse_05_608, phases=primary
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.gfa
+            MissingInputException: Missing input files for rule alignToFirstControlPrimary:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.primary_compto5.sam
+                wildcards: sample=horse_05_608
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa
+        WorkflowError:
+            MissingInputException: Missing input files for rule de_novo_gfa_to_fa:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.fa
+                wildcards: sample=horse_05_608, phases=primary
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.gfa
+            MissingInputException: Missing input files for rule alignToFirstControlPrimary:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.primary_compto5.sam
+                wildcards: sample=horse_05_608
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa
+    WorkflowError:
+        WorkflowError:
+            MissingInputException: Missing input files for rule de_novo_gfa_to_fa:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.fa
+                wildcards: sample=horse_05_608, phases=primary
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.gfa
+            MissingInputException: Missing input files for rule alignToFirstControlPrimary:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.primary_compto5.sam
+                wildcards: sample=horse_05_608
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa
+        WorkflowError:
+            MissingInputException: Missing input files for rule de_novo_gfa_to_fa:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.fa
+                wildcards: sample=horse_05_608, phases=primary
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.primary.p_ctg.gfa
+            MissingInputException: Missing input files for rule alignToFirstControlPrimary:
+                output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/sniffles/horse_05_608.primary_compto5.sam
+                wildcards: sample=horse_05_608
+                affected files:
+                    /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_scaffold_chr_only.fa

@@ -1,0 +1,142 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+all                          1
+create_coverage_table        5
+total                        6
+
+Select jobs to execute...
+Execute 5 jobs...
+
+[Tue Jul 30 14:00:42 2024]
+localrule create_coverage_table:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.length.csv
+    jobid: 24
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.length.csv
+    wildcards: sample=horse_02_205
+    resources: tmpdir=/tmp
+
+
+    #create csv file with headers
+    echo "line,length,type,coverage" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.length.csv
+    
+    #subcommand
+    LEN1=`bioawk -c fastx '{sum+=length($seq)}END{print sum}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.p_ctg.fa`
+    
+    #adding length lines to csv we created
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.p_ctg.fa | bioawk -c fastx -v line="HIFI" '{print line","length($seq)","length ($seq)}' | sort -k3rV -t "," | awk -F "," -v len="$LEN1" -v type="contig" 'OFS=","{print $1,$2,type,(sum+0)/len; sum+=$3 }' >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.length.csv
+  
+
+[Tue Jul 30 14:00:42 2024]
+localrule create_coverage_table:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_238/horse_04_238.asm.bp.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_238/horse_04_238.length.csv
+    jobid: 20
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_238/horse_04_238.length.csv
+    wildcards: sample=horse_04_238
+    resources: tmpdir=/tmp
+
+
+    #create csv file with headers
+    echo "line,length,type,coverage" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_238/horse_04_238.length.csv
+    
+    #subcommand
+    LEN1=`bioawk -c fastx '{sum+=length($seq)}END{print sum}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_238/horse_04_238.asm.bp.p_ctg.fa`
+    
+    #adding length lines to csv we created
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_238/horse_04_238.asm.bp.p_ctg.fa | bioawk -c fastx -v line="HIFI" '{print line","length($seq)","length ($seq)}' | sort -k3rV -t "," | awk -F "," -v len="$LEN1" -v type="contig" 'OFS=","{print $1,$2,type,(sum+0)/len; sum+=$3 }' >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_238/horse_04_238.length.csv
+  
+
+[Tue Jul 30 14:00:42 2024]
+localrule create_coverage_table:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.length.csv
+    jobid: 19
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.length.csv
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp
+
+
+    #create csv file with headers
+    echo "line,length,type,coverage" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.length.csv
+    
+    #subcommand
+    LEN1=`bioawk -c fastx '{sum+=length($seq)}END{print sum}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.p_ctg.fa`
+    
+    #adding length lines to csv we created
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.p_ctg.fa | bioawk -c fastx -v line="HIFI" '{print line","length($seq)","length ($seq)}' | sort -k3rV -t "," | awk -F "," -v len="$LEN1" -v type="contig" 'OFS=","{print $1,$2,type,(sum+0)/len; sum+=$3 }' >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.length.csv
+  
+
+[Tue Jul 30 14:00:42 2024]
+localrule create_coverage_table:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.length.csv
+    jobid: 23
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.length.csv
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+    #create csv file with headers
+    echo "line,length,type,coverage" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.length.csv
+    
+    #subcommand
+    LEN1=`bioawk -c fastx '{sum+=length($seq)}END{print sum}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.p_ctg.fa`
+    
+    #adding length lines to csv we created
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.p_ctg.fa | bioawk -c fastx -v line="HIFI" '{print line","length($seq)","length ($seq)}' | sort -k3rV -t "," | awk -F "," -v len="$LEN1" -v type="contig" 'OFS=","{print $1,$2,type,(sum+0)/len; sum+=$3 }' >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.length.csv
+  
+
+[Tue Jul 30 14:00:42 2024]
+localrule create_coverage_table:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.p_ctg.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.length.csv
+    jobid: 22
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.length.csv
+    wildcards: sample=horse_06_1212
+    resources: tmpdir=/tmp
+
+
+    #create csv file with headers
+    echo "line,length,type,coverage" > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.length.csv
+    
+    #subcommand
+    LEN1=`bioawk -c fastx '{sum+=length($seq)}END{print sum}' /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.p_ctg.fa`
+    
+    #adding length lines to csv we created
+    cat /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.p_ctg.fa | bioawk -c fastx -v line="HIFI" '{print line","length($seq)","length ($seq)}' | sort -k3rV -t "," | awk -F "," -v len="$LEN1" -v type="contig" 'OFS=","{print $1,$2,type,(sum+0)/len; sum+=$3 }' >> /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.length.csv
+  
+[Tue Jul 30 14:01:18 2024]
+Finished job 24.
+1 of 6 steps (17%) done
+[Tue Jul 30 14:01:18 2024]
+Finished job 23.
+2 of 6 steps (33%) done
+[Tue Jul 30 14:01:18 2024]
+Finished job 20.
+3 of 6 steps (50%) done
+[Tue Jul 30 14:01:19 2024]
+Finished job 22.
+4 of 6 steps (67%) done
+[Tue Jul 30 14:01:22 2024]
+Finished job 19.
+5 of 6 steps (83%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul 30 14:01:22 2024]
+localrule all:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.p_ctg.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_238/horse_04_238.asm.bp.p_ctg.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.p_ctg.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.p_ctg.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.p_ctg.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.p_ctg.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.asm.bp.p_ctg.fa.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_238/horse_04_238.asm.bp.p_ctg.fa.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.asm.bp.p_ctg.fa.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.asm.bp.p_ctg.fa.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.asm.bp.p_ctg.fa.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.asm.bp.p_ctg.fa.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.length.csv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_238/horse_04_238.length.csv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_01_200/horse_01_200.length.csv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.length.csv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.length.csv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.length.csv
+    jobid: 0
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_02_205/horse_02_205.length.csv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_04_238/horse_04_238.length.csv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_05_608/horse_05_608.length.csv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_06_1212/horse_06_1212.length.csv, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/outputGenomes/horse_03_238/horse_03_238.length.csv
+    resources: tmpdir=/tmp
+
+[Tue Jul 30 14:01:22 2024]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: .snakemake/log/2024-07-30T140041.997294.snakemake.log

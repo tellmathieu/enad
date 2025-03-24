@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule intersectGFFandVCF in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phased_analysis_vcf.smk, line 242:
+Missing input files for rule intersectGFFandVCF:
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/phasedSVs.compto5-1_vcf_gff_intersect.txt
+    wildcards: hap=phasedSVs.compto5-1
+    affected files:
+        /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_phasedSVs.compto5-1.gff

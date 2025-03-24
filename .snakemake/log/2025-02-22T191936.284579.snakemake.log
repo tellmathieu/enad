@@ -1,0 +1,184 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=50000
+Job stats:
+job                           count
+--------------------------  -------
+alignToFirstControlPrimary        1
+all                               1
+convertSamToBamPrimary            1
+coverageStats                     6
+coverageStatsAgg                  1
+sortBamPrimary                    1
+total                            11
+
+Select jobs to execute...
+
+[Sat Feb 22 19:20:00 2025]
+rule coverageStats:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_04_56.primary_compto5_sorted.bam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56_statsDone.txt
+    jobid: 226
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56_statsDone.txt
+    wildcards: comp_sample=horse_04_56
+    resources: tmpdir=/tmp
+
+
+    samtools depth -a /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_04_56.primary_compto5_sorted.bam | awk '{sum+=$3} END {print sum/NR}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56_statsDone.txt
+  
+
+[Sat Feb 22 19:20:00 2025]
+rule coverageStats:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_03_238.primary_compto5_sorted.bam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238_statsDone.txt
+    jobid: 228
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238_statsDone.txt
+    wildcards: comp_sample=horse_03_238
+    resources: tmpdir=/tmp
+
+
+    samtools depth -a /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_03_238.primary_compto5_sorted.bam | awk '{sum+=$3} END {print sum/NR}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238_statsDone.txt
+  
+
+[Sat Feb 22 19:20:00 2025]
+rule coverageStats:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_02_205.primary_compto5_sorted.bam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205_statsDone.txt
+    jobid: 230
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205_statsDone.txt
+    wildcards: comp_sample=horse_02_205
+    resources: tmpdir=/tmp
+
+
+    samtools depth -a /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_02_205.primary_compto5_sorted.bam | awk '{sum+=$3} END {print sum/NR}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205_statsDone.txt
+  
+
+[Sat Feb 22 19:20:00 2025]
+rule alignToFirstControlPrimary:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.sam
+    jobid: 225
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.sam
+    wildcards: sample=horse_05_608
+    resources: tmpdir=/tmp, mem_mb=50000, mem_mib=47684
+
+
+    mkdir -p /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary
+
+    minimap2       -a       -x map-hifi       --eqx       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa       /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608.scaffold_chr_only.fa       > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.sam
+  
+
+[Sat Feb 22 19:20:00 2025]
+rule coverageStats:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_06_1212.primary_compto5_sorted.bam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212_statsDone.txt
+    jobid: 227
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212_statsDone.txt
+    wildcards: comp_sample=horse_06_1212
+    resources: tmpdir=/tmp
+
+
+    samtools depth -a /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_06_1212.primary_compto5_sorted.bam | awk '{sum+=$3} END {print sum/NR}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212_statsDone.txt
+  
+
+[Sat Feb 22 19:20:00 2025]
+rule coverageStats:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary_compto5_sorted.bam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200_statsDone.txt
+    jobid: 229
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200_statsDone.txt
+    wildcards: comp_sample=horse_01_200
+    resources: tmpdir=/tmp
+
+
+    samtools depth -a /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_01_200.primary_compto5_sorted.bam | awk '{sum+=$3} END {print sum/NR}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200_statsDone.txt
+  
+[Sat Feb 22 19:26:36 2025]
+Finished job 225.
+1 of 11 steps (9%) done
+Select jobs to execute...
+
+[Sat Feb 22 19:26:36 2025]
+rule convertSamToBamPrimary:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.sam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.bam
+    jobid: 224
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.bam; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.sam
+    wildcards: comp_sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+    samtools view -S -b /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.sam > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.bam
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.sam
+  
+[Sat Feb 22 19:27:10 2025]
+Finished job 224.
+2 of 11 steps (18%) done
+Select jobs to execute...
+
+[Sat Feb 22 19:27:10 2025]
+rule sortBamPrimary:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.bam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5_sorted.bam
+    jobid: 223
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5_sorted.bam; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.bam
+    wildcards: comp_sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+    samtools sort -o /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5_sorted.bam /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.bam
+    rm /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5.bam
+  
+[Sat Feb 22 19:28:03 2025]
+Finished job 228.
+3 of 11 steps (27%) done
+[Sat Feb 22 19:28:08 2025]
+Finished job 223.
+4 of 11 steps (36%) done
+Select jobs to execute...
+
+[Sat Feb 22 19:28:08 2025]
+rule coverageStats:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5_sorted.bam
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_statsDone.txt
+    jobid: 222
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_statsDone.txt; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5_sorted.bam
+    wildcards: comp_sample=horse_05_608
+    resources: tmpdir=/tmp
+
+
+    samtools depth -a /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/snifflesPrimary/horse_05_608.primary_compto5_sorted.bam | awk '{sum+=$3} END {print sum/NR}' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_statsDone.txt
+  
+[Sat Feb 22 19:28:36 2025]
+Finished job 230.
+5 of 11 steps (45%) done
+[Sat Feb 22 19:28:44 2025]
+Finished job 229.
+6 of 11 steps (55%) done
+[Sat Feb 22 19:28:49 2025]
+Finished job 226.
+7 of 11 steps (64%) done
+[Sat Feb 22 19:29:59 2025]
+Finished job 227.
+8 of 11 steps (73%) done
+[Sat Feb 22 19:35:59 2025]
+Finished job 222.
+9 of 11 steps (82%) done
+Select jobs to execute...
+
+[Sat Feb 22 19:35:59 2025]
+rule coverageStatsAgg:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_statsDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56_statsDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212_statsDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238_statsDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200_statsDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205_statsDone.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/coverageStats.txt
+    jobid: 221
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/coverageStats.txt; Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608_statsDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238_statsDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200_statsDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205_statsDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212_statsDone.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_56_statsDone.txt
+    resources: tmpdir=/tmp
+
+RuleException in rule coverageStatsAgg in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis_phased_new.smk, line 688:
+AttributeError: 'Wildcards' object has no attribute 'comp_sample', when formatting the following:
+
+    echo {wildcards.comp_sample} >> {output}
+    cat {input.stats} >> {output}
+  

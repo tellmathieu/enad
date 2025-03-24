@@ -1,0 +1,42 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=70000
+Job stats:
+job         count
+--------  -------
+all             1
+chrNames        1
+total           2
+
+Select jobs to execute...
+
+[Tue Sep 17 14:31:24 2024]
+rule chrNames:
+    input: /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_assembly_report.txt
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt
+    jobid: 25
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt
+    resources: tmpdir=/tmp
+
+
+    grep "^chr" /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_assembly_report.txt | awk '{ print $1 }' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt
+    grep "^chr" /home/tmathieu/eNAD/resources/GCF_002863925.1_EquCab3.0_assembly_report.txt | awk '{ print $1 $7 }' > /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt
+  
+[Tue Sep 17 14:31:24 2024]
+Finished job 25.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Tue Sep 17 14:31:24 2024]
+localrule all:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/horse_03_238_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_04_238/horse_04_238_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_01_200/horse_01_200_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_06_1212/horse_06_1212_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_05_608/horse_05_608_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_02_205/horse_02_205_rename.scaffold.fasta, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt
+    jobid: 0
+    reason: Input files updated by another job: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chr.accesssion.list.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/resources/chromosome.name.list.txt
+    resources: tmpdir=/tmp
+
+[Tue Sep 17 14:31:24 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-09-17T143122.332543.snakemake.log

@@ -1,0 +1,41 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=70000
+Job stats:
+job             count
+------------  -------
+all                 1
+combineBUSCO        1
+parseBUSCO          6
+total               8
+
+Select jobs to execute...
+
+[Thu Sep 12 15:52:35 2024]
+rule parseBUSCO:
+    input: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/short_summary.specific.laurasiatheria_odb10.horse_03_238.txt, /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/run_laurasiatheria_odb10/full_table.tsv
+    output: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/busco.csv
+    jobid: 2
+    reason: Missing output files: /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/horse_03_238/busco.csv
+    wildcards: sample=horse_03_238
+    resources: tmpdir=/tmp
+
+RuleException in rule parseBUSCO in file /group/ctbrowngrp/finnolab_shared/eNAD_PacBio/hifi_assembly_analysis.smk, line 112:
+NameError: The name 'print strain","$1' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+    echo "Strain,Complete_single_copy,Complete_duplicated,Fragmented,Missing" > {output.buscoCSV}
+
+    cat {input.outputSummary} | grep "(S)" | awk -v strain="{wildcards.sample}" '{print strain","$1}' > {params.buscoDir}/complete_single.txt
+
+    cat {input.outputSummary} | grep "(D)" | awk '{print $1}' > {params.buscoDir}/complete_duplicated.txt
+
+    cat {input.outputSummary} | grep "(F)" | awk '{print $1}' > {params.buscoDir}/fragmented.txt
+
+    cat {input.outputSummary} | grep "(M)" | awk '{print $1}' > {params.buscoDir}/missing.txt
+
+    paste -d "," {params.buscoDir}/complete_single.txt {params.buscoDir}/complete_duplicated.txt {params.buscoDir}/fragmented.txt {params.buscoDir}/missing.txt >> {output.buscoCSV}
+
+    rm {params.buscoDir}/complete_single.txt {params.buscoDir}/complete_duplicated.txt {params.buscoDir}/fragmented.txt {params.buscoDir}/missing.txt
+  
