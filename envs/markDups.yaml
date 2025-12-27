@@ -1,0 +1,5 @@
+name: markDups
+dependencies:
+  - bioconda::picard>=3.0
+  - anaconda::openjdk=17
+  - bioconda::gatk4>=4.6
